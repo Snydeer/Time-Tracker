@@ -4,6 +4,7 @@
 
     <section class="signup-form">
             <h2>Sign Up</h2>
+            <p>Please Note that this is only for company managers or business owners.</p>
         <form action="includes/signup.inc.php" method="post">
             <input type="text" name="name" placeholder="Full name...">
             <input type="text" name="email" placeholder="Email...">
