@@ -22,7 +22,7 @@
                     if (isset($_SESSION["useruid"])) {
                         echo "<p>Hello there " . $_SESSION["username"] . "</p>";
                         echo "<li><a href = 'profile.php'>Profile page</a></li>"; //not developed yet but will be soon
-                        echo "<li><a href = 'create.php'>Cre`ate Account for Employees</a></li>";
+                        echo "<li><a href = 'create.php'>Create Account for Employees</a></li>";
                         echo "<li><a href = 'timemanager.php'>Time Manager</a></li>";
                         echo "<li><a href = 'includes/logout.inc.php'>Log out</a></li>";
                     } elseif (isset($_SESSION["employeeuid"])) {
