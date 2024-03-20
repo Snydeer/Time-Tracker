@@ -1,0 +1,129 @@
+@import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+
+/* Body Styles */
+body {
+  background-color: #e5e9f4;
+  padding: 2rem;
+}
+
+/* Title Styles */
+.title, h1 {
+  text-align: center;
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+}
+
+/* Buttons Container Styles */
+.buttons, .clockButtons {
+  display: grid;
+  width: min(75rem, 100%);
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+  gap: 2rem;
+  margin-top: 200px;
+}
+
+/* Main Button Styles */
+button.main, .sideBut {
+  container-type: inline-size;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0, 0%, 10%);
+  background: none;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  --shadow: -.5rem -.5rem 1rem hsl(0 0% 100% / .75), .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+}
+
+button.main:hover, button.main:focus-visible, .sideBut:hover, .sideBut:focus {
+  color: hsl(10, 80%, 50%);
+  scale: 1.1;
+}
+
+button.main:active, button.main.active, .sideBut:active, .sideBut.active {
+  box-shadow: var(--shadow), inset 0.5rem 0.5rem 1rem hsla(0, 0%, 50%, 0.5), inset -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75);
+  color: hsl(10, 80%, 50%);
+}
+
+button.main > i, button.main.active > i {
+  font-size: 31cqi;
+}
+
+button.main > span, button.main.active > span {
+  font-family: system-ui, sans-serif;
+  font-size: 16cqi;
+}
+
+/* Additional Button Styles */
+.sideBut {
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  background-color: #8b8b8b;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  margin: 20px auto;
+}
+
+.sideBut:hover {
+  background-color: #727272;
+}
+
+.sideBut:focus {
+  outline: none;
+}
+
+.sideBut span {
+  display: block;
+}
+
+/* Return Button Styles */
+.returnButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  font-family: system-ui, sans-serif;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.returnButton:hover {
+  background-color: #0056b3;
+}
+
+/* Timesheet Box Styles */
+.timesheet-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.timesheet-box th, .timesheet-box td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.timesheet-box thead {
+  background-color: #f0f0f0;
+}
+
+.timesheet-box tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timesheet-box tbody tr:hover {
+  background-color: #e0e0e0;
+}
