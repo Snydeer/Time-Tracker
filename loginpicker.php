@@ -2,12 +2,27 @@
     include_once 'header.php';
 ?>
 
-    <section class="Picker">
-        <h2>Employee or Company Manager?</h2>
-        <li><a href = "loginemployee.php">Employee</a></li>
-        <li><a href = "login.php">Company Manager</a></li>
-     </section>
+        
+        
 
+
+        <html>
+    <body>
+    <h1>Employee or Company Manager?</h1>
+        <div class="buttons">
+
+        <button class="main" onclick="navigateToEmployeeLogin()">
+                <span>Employee</span>
+        </button>
+        <button class="main" onclick="navigateToManagerLogin()">
+                <span>Manager</span>
+        </button>
+            
+        
+
+         
+    </body>
+</html>
 <?php
     include_once 'footer.php';
 ?>
