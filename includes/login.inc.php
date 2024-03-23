@@ -12,5 +12,5 @@ if (isset($_POST["submit"])) {
 
     $login->loginUser();
 
-    header("location: ../index.php?error=none");
+    header("location: ../dashboard.php?error=none");
 }

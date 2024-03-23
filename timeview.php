@@ -29,7 +29,7 @@ function formatElapsedTime($seconds) {
 }
 
 if (!isset($_SESSION['employeeuid'])) {
-    header("Location: login.php");
+    header("Location: loginpicker.php");
     exit();
 }
 
@@ -45,7 +45,7 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
 </head>
 <body>
     <h1>View Time History</h1>
-    <p>Welcome, <?php echo $_SESSION['employeename']; ?>!</p>
+    <h2>Welcome, <?php echo $_SESSION['employeename']; ?>!</h2>
     <table>
         <thead>
             <tr>
