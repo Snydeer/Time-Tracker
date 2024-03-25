@@ -159,6 +159,34 @@ function getMostRecentTimeTrackingDetails($dbh, $username) {
             <?php endif; ?>
 
         </div>
+
+
+    <?php if (isset($_SESSION['tracking_id'])) : ?>
+        <?php $trackingDetails = getTimeTrackingDetails($dbh, $_SESSION['tracking_id']); ?>
+        <p>Start Time: <?php echo $trackingDetails['start_time']; ?></p>
+        <div class="center-container">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <button type="submit" name="stop">Clock Out</button>
+        </form>
+       <!-- <p>nope</p> used to help test -->
+        </div>
+    <?php elseif ($mostRecentTrackingDetails['elapsed_time'] === null) : ?>
+        <p>Start Time: <?php echo $mostRecentTrackingDetails['start_time']; ?></p>
+        <div class="center-container">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <button type="submit" name="stopafter">Clock Out</button>
+        </form>
+        <!--<p>yup</p> dw about this-->
+        </div>
+    
+    <?php else : ?>
+        <p>Time Not Tracked</p>
+        <div class="center-container">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <button type="submit" name="start">Clock In</button>
+        </form>
+        </div>
+    <?php endif; ?>
 </body>
 
 

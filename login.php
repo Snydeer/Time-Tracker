@@ -10,6 +10,7 @@
             <input class ="login" input type="password" name="pwd" placeholder="Password...">
             <button class ="login" button type="submit" name="submit">Log In</button>
         </form>
+        </div>
         <div class = "error-login">
         <?php
         if(isset($_GET["error"])) {
@@ -22,7 +23,7 @@
              } 
             } 
         ?> 
-        </div>
+        
         </div>
      </section>
 
