@@ -59,7 +59,7 @@ function navigateToPayPeriod() {
 }
 
 function navigateToSettings() {
-    window.location.href = "/Settings.html";
+    window.location.href = "settings.php";
 }
 
 function returnBut() {
