@@ -1,6 +1,6 @@
 @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
 body {
-  background-color: #e5e9f4;
+  background-color: #D6E6F2;
   padding: 2rem;
 }
 
@@ -116,7 +116,7 @@ button.main > span, button.main.active > span {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #777777;
+  background-color: #B9D7EA;
   overflow-x: hidden;
   padding-top: 50px;
 }
