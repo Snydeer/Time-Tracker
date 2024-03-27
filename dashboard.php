@@ -10,12 +10,17 @@
                 if (isset($_SESSION["useruid"])) {
                     echo '
                         <button class="main" onclick="navigateToCreateEmployee()">
-                            <span>Create</span>
+                            <span>Create Employee Account</span>
                         </button>
                     ';
                     echo '
                         <button class="main" onclick="navigateToEmployeeTimesheet()">
                             <span>Employee Timesheet</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToAnnouncement()">
+                            <span>Create Announcements</span>
                         </button>
                     ';
                 } elseif (isset($_SESSION["employeeuid"])) {
@@ -34,12 +39,10 @@
                 }
             ?>
         
-            <button class="main" onclick="navigateToSchedule()">
-                <span>Schedule</span>
-            </button>
-        
-            <button class="main" onclick="navigateToAnnouncement()">
-                <span>Announcements</span>
+            
+
+            <button class="main" onclick="navigateToViewAnnouncement()">
+                <span>View Announcements</span>
               </button>
 
             <button class="main" onclick="navigateToPayPeriod()">

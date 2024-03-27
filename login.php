@@ -6,7 +6,7 @@
         <h1>Log In for Company Manager</h1>
         <div class = "login-container">
         <form action="includes/login.inc.php" method="post">
-            <input class ="login" input type="text" name="uid" placeholder="Username/Email...">
+            <input class ="login" input type="text" name="uid" placeholder="Username...">
             <input class ="login" input type="password" name="pwd" placeholder="Password...">
             <button class ="login" button type="submit" name="submit">Log In</button>
         </form>

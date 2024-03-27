@@ -11,10 +11,10 @@
     <h1>Employee or Company Manager?</h1>
         <div class="buttons">
 
-        <button class="main" onclick="navigateToEmployeeLogin()">
+        <button class="choose" onclick="navigateToEmployeeLogin()">
                 <span>Employee</span>
         </button>
-        <button class="main" onclick="navigateToManagerLogin()">
+        <button class="choose" onclick="navigateToManagerLogin()">
                 <span>Manager</span>
         </button>
             

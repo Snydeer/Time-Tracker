@@ -36,6 +36,13 @@ if (!isset($_SESSION['employeeuid'])) {
 $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
 ?>
 
+<?php
+function calculateHours($elapsed_time) {
+    $hours = floor($elapsed_time / 3600);
+    return $hours;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +59,8 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
                     <th>Date</th>
                     <th>Time In</th>
                     <th>Time Out</th>
-                    <th>Total Hours</th>
+                    <th>Elapsed Time</th>
+                    <th>Hours</th> <!-- New column for hours -->
                 </tr>
             </thead>
             <tbody>
@@ -63,6 +71,7 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
                         <td><?php echo date('g:i A', strtotime($track['start_time'])); ?></td>
                         <td><?php echo date('g:i A', strtotime($track['end_time'])); ?></td>
                         <td><?php echo formatElapsedTime($track['elapsed_time']); ?></td>
+                        <td><?php echo calculateHours($track['elapsed_time']); ?></td> <!-- Call function to calculate hours -->
                     </tr>
                 <?php endforeach; ?>
             </tbody>

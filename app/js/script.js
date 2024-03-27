@@ -2,6 +2,10 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+function navigateToViewAnnouncement() {
+    window.location.href = "viewannouncements.php";
+}
+
 function navigateToEmployeeLogin() {
     window.location.href = "loginemployee.php";
 }
@@ -24,6 +28,10 @@ function navigateToDashboard() {
 
 function navigateToHome() {
     window.location.href = "index.php";
+}
+
+function navigateToProfile() {
+    window.location.href = "profile.php";
 }
 
 function navigateToLogout() {
@@ -51,7 +59,7 @@ function navigateToSchedule() {
 }
 
 function navigateToAnnouncement() {
-    window.location.href = "/announcements.html";
+    window.location.href = "createannouncement.php";
 }
 
 function navigateToPayPeriod() {
@@ -59,9 +67,22 @@ function navigateToPayPeriod() {
 }
 
 function navigateToSettings() {
-    window.location.href = "/Settings.html";
+    window.location.href = "settings.php";
 }
 
 function returnBut() {
     window.location.href = "/main.html";
 }
+
+//Functions
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the dark mode toggle element
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    // Add event listener to toggle dark mode
+    darkModeToggle.addEventListener('change', function() {
+        // Toggle dark mode class on the body element
+        document.body.classList.toggle('dark-mode');
+    });
+});
