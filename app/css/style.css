@@ -1,4 +1,10 @@
 @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+
+:root{
+  --link: rgb(4, 0, 128);
+  --hover: purple;
+}
+
 body {
   background-color: #e5e9f4;
   padding: 2rem;
@@ -372,4 +378,12 @@ h2 {
 .center-container select,
 .center-container button {
   margin: 0 10px; /* Adjust margin as needed */
+}
+
+a{
+color: var(--link);
+}
+
+a:hover{
+color: var(--hover);
 }
