@@ -42,7 +42,17 @@
                             <span>Dashboard</span>
                         </button>
                     ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToLogout()">
+                            <span>Logout</span>
+                        </button>
+                    ';
                 } else {
+                    echo '
+                        <button class="sideBut" onclick="navigateToSignUp()">
+                            <span>Sign Up</span>
+                        </button>
+                    ';
                     echo '
                         <button class="sideBut" onclick="navigateToLogin()">
                             <span>Login</span>
@@ -51,6 +61,7 @@
                 }
             ?>
         </div>
+        
 
         <script src="app/js/script.js"></script>
 </body>

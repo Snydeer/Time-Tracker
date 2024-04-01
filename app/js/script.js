@@ -6,6 +6,18 @@ function navigateToEmployeeLogin() {
     window.location.href = "loginemployee.php";
 }
 
+function navigateToEmployeeTimesheet() {
+    window.location.href = "timemanager.php";
+}
+
+function navigateToCreateEmployee() {
+    window.location.href = "create.php";
+}
+
+function navigateToSignUp() {
+    window.location.href = "signup.php";
+}
+
 function navigateToDashboard() {
     window.location.href = "dashboard.php";
 }
@@ -47,7 +59,7 @@ function navigateToPayPeriod() {
 }
 
 function navigateToSettings() {
-    window.location.href = "/Settings.html";
+    window.location.href = "settings.php";
 }
 
 function returnBut() {

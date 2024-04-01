@@ -9,8 +9,13 @@
         <?php
                 if (isset($_SESSION["useruid"])) {
                     echo '
-                        <button class="main" onclick="navigateToLogin()">
-                            <span>Login</span>
+                        <button class="main" onclick="navigateToCreateEmployee()">
+                            <span>Create</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToEmployeeTimesheet()">
+                            <span>Employee Timesheet</span>
                         </button>
                     ';
                 } elseif (isset($_SESSION["employeeuid"])) {
@@ -25,17 +30,9 @@
                          </button>
                     ';
                 } else {
-                    echo '
-                        <button class="main" onclick="navigateToTimeSheet()">
-                            <span>Idk</span>
-                        </button>
-                    ';
+                    header("location: ../index.php");
                 }
             ?>
-
-            <button class="main" onclick="navigateToTimeSheet()">
-                <span>Timesheet</span>
-            </button>
         
             <button class="main" onclick="navigateToSchedule()">
                 <span>Schedule</span>

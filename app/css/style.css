@@ -2,6 +2,7 @@
 body {
   background-color: #e5e9f4;
   padding: 2rem;
+  margin-left: 250px;
 }
 
 h1 {
@@ -9,6 +10,9 @@ h1 {
   color: hsl(0, 0%, 10%);
   font-family: system-ui, sans-serif;
   font-size: 3rem;
+}
+p {
+  text-align: center;
 }
 
 li {
@@ -25,6 +29,8 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
   gap: 2rem;
   margin-top: 200px;
+  
+  /* padding-left: 30px; */
 }
 
 .clockButtons {
@@ -36,9 +42,14 @@ li {
   margin-top: 200px;
 }
 
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
 button.main, .sideBut {
   container-type: inline-size;
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/1;
   border: 0.5rem solid transparent;
   border-radius: 1rem;
   color: hsl(0, 0%, 10%);
@@ -51,7 +62,8 @@ button.main, .sideBut {
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
   box-shadow: var(--shadow);
   outline: none;
-  transition: all 0.1s;
+  transition: all 0.2s;
+  margin-left: -10px;
 }
 
 button.main:hover, button.main:focus-visible, .sideBut:hover, .sideBut:focus {
@@ -79,11 +91,14 @@ button.main > span, button.main.active > span {
   color: hsl(0, 0%, 100%);
   background-color: #8b8b8b;
   font-family: system-ui, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  white-space: nowrap;
 }
 
 .sideBut:hover {
@@ -278,9 +293,40 @@ button.random > span, button.random.active > span {
   text-align: center;
 }
 
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 55vh; /* Set the height of the container to 100% of the viewport height */
+}
+
+/* Apply styles to the form elements */
+.signup {
+  display: block; /* Change display to block to stack elements vertically */
+  margin-bottom: 10px; /* Add some margin between form elements */
+  padding: 10px; /* Add padding to the input boxes and button */
+  width: 300px; /* Set the width of the input boxes and button */
+  height: 40px; /* Set the height of the input boxes and button */
+  font-size: 16px; /* Set the font size */
+}
+
+.signup[type="submit"] {
+  /* If you want the button to have a different style from the input boxes */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-signup {
+  text-align: center;
+}
+
 .error-message {
   color: red;
-  margin-top: 10px; /* Add some space between the inputs and the error message */
+  margin-top: 10px; 
 }
 
 h2 {
@@ -289,4 +335,41 @@ h2 {
   color: hsl(0, 0%, 10%);
   font-family: system-ui, sans-serif;
   font-size: 2rem;
+}
+
+.timesheet-box table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.timesheet-box th, .timesheet-box td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.timesheet-box thead {
+  background-color: #f0f0f0;
+}
+
+.timesheet-box tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timesheet-box tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-container label,
+.center-container select,
+.center-container button {
+  margin: 0 10px; /* Adjust margin as needed */
 }

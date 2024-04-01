@@ -44,26 +44,31 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
     <title>View Time Tracks</title>
 </head>
 <body>
-    <h1>View Time History</h1>
-    <h2>Welcome, <?php echo $_SESSION['employeename']; ?>!</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Elapsed Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($timeTracks as $track) : ?>
+<h1>Timesheet</h1>
+    <div class="timesheet-box">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo date('F j, Y H:i:s', strtotime($track['start_time'])); ?></td>
-                    <td><?php echo date('F j, Y H:i:s', strtotime($track['end_time'])); ?></td>
-                    <td><?php echo formatElapsedTime($track['elapsed_time']); ?></td>
+                    <th>Date</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Total Hours</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <!-- Timesheet entries from database -->
+                <?php foreach ($timeTracks as $track) : ?>
+                    <tr>
+                        <td><?php echo date('Y-m-d', strtotime($track['start_time'])); ?></td>
+                        <td><?php echo date('g:i A', strtotime($track['start_time'])); ?></td>
+                        <td><?php echo date('g:i A', strtotime($track['end_time'])); ?></td>
+                        <td><?php echo formatElapsedTime($track['elapsed_time']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <script src="app/js/script.js"></script>
 </body>
 </html>
 
