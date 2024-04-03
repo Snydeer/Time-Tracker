@@ -1,7 +1,14 @@
 @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+
+:root{
+  --link: rgb(4, 0, 128);
+  --hover: purple;
+}
+
 body {
   background-color: #e5e9f4;
   padding: 2rem;
+  margin-left: 250px;
 }
 
 .confirm-container {
@@ -53,6 +60,8 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
   gap: 2rem;
   margin-top: 200px;
+  
+  /* padding-left: 30px; */
 }
 
 .clockButtons {
@@ -71,7 +80,7 @@ li {
 
 button.main, .sideBut {
   container-type: inline-size;
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/1;
   border: 0.5rem solid transparent;
   border-radius: 1rem;
   color: hsl(0, 0%, 10%);
@@ -84,7 +93,8 @@ button.main, .sideBut {
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
   box-shadow: var(--shadow);
   outline: none;
-  transition: all 0.1s;
+  transition: all 0.2s;
+  margin-left: -10px;
 }
 
 button.choose {
@@ -430,4 +440,12 @@ h2 {
 .center-container select,
 .center-container button {
   margin: 0 10px; /* Adjust margin as needed */
+}
+
+a{
+color: var(--link);
+}
+
+a:hover{
+color: var(--hover);
 }
