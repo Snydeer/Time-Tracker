@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2024 at 08:43 AM
+-- Generation Time: Apr 03, 2024 at 09:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,6 +47,29 @@ CREATE TABLE `employee` (
   `employees_uid` tinytext NOT NULL,
   `employees_pwd` longtext NOT NULL,
   `employees_company` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Triggers `employee`
+--
+DELIMITER $$
+CREATE TRIGGER `new_employee_trigger` AFTER INSERT ON `employee` FOR EACH ROW BEGIN
+    INSERT INTO payroll (employees_uid, employees_company, pay_amount)
+    VALUES (NEW.employees_uid, NEW.employees_company, 0);
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payroll`
+--
+
+CREATE TABLE `payroll` (
+  `employees_uid` tinytext NOT NULL,
+  `employees_company` varchar(255) DEFAULT NULL,
+  `pay_amount` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
