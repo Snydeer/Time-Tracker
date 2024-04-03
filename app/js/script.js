@@ -2,6 +2,18 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+function navigateToChangePay() {
+    window.location.href = "changepayroll.php";
+}
+
+function navigateToPwChange() {
+    window.location.href = "changepassword.php";
+}
+
+function navigateToViewAnnouncement() {
+    window.location.href = "viewannouncements.php";
+}
+
 function navigateToEmployeeLogin() {
     window.location.href = "loginemployee.php";
 }
@@ -24,6 +36,10 @@ function navigateToDashboard() {
 
 function navigateToHome() {
     window.location.href = "index.php";
+}
+
+function navigateToProfile() {
+    window.location.href = "profile.php";
 }
 
 function navigateToLogout() {
@@ -51,7 +67,7 @@ function navigateToSchedule() {
 }
 
 function navigateToAnnouncement() {
-    window.location.href = "/announcements.html";
+    window.location.href = "createannouncement.php";
 }
 
 function navigateToPayPeriod() {
@@ -65,3 +81,4 @@ function navigateToSettings() {
 function returnBut() {
     window.location.href = "/main.html";
 }
+

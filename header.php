@@ -32,6 +32,11 @@
                         </button>
                     ';
                     echo '
+                        <button class="sideBut" onclick="navigateToProfile()">
+                            <span>Profile</span>
+                        </button>
+                    ';
+                    echo '
                         <button class="sideBut" onclick="navigateToLogout()">
                             <span>Logout</span>
                         </button>
@@ -40,6 +45,11 @@
                     echo '
                         <button class="sideBut" onclick="navigateToDashboard()">
                             <span>Dashboard</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToProfile()">
+                            <span>Profile</span>
                         </button>
                     ';
                     echo '

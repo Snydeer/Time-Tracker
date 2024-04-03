@@ -1,3 +1,4 @@
+
 *{
     color: var(--text1);
 }
@@ -58,6 +59,121 @@ main{
     
 
 }
+
+.flex-container{
+    display:flex;
+}
+
+
+.left,.right {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    flex: 1;
+    padding: 1rem;
+    background-color: inherit;
+  }
+
+.txt-bttn:hover, .login-bttn:hover{
+    color: var(--hover1);
+}
+
+.login-bttn:hover{
+    background-color: var(--hover1);
+    color: white;
+}
+
+.txt-bttn{
+    
+    border: none;
+    background-color: inherit;
+    padding: 10px 24px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.login-bttn{
+    background-color: var(--main1);
+    border: none;
+    padding: 5px 45px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+
+}
+
+.line{
+    background-color:black;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-left : 3px solid black;
+    height: 50px;
+
+  }
+=======
+*{
+    color: var(--text1);
+}
+
+:root{
+    --text1: #1E1E1E;
+    --text2: #1E1E1E;
+    --main1: #D9D9D9;
+    --main2: #D9D9D9;
+    --secondary1: #A4A4A4;
+    --secondary2: #A4A4A4 ;
+    --hover1: blue;
+    --hover2: blue ;
+
+
+}
+
+
+html,body{
+    background-color: var(--main1);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: fixed;
+    margin: 0px 0px 5px 0px;
+    padding: 0px;
+    height: 15vh;
+    background-color: var(--secondary1);
+  }
+
+main{
+    padding-top: 15vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+
+}
+
+
+#nav-divider{
+    position:fixed;
+    width: 100%;
+}
+
+
+#nav-bttn{
+    display: flex;
+    margin-left:100vh;
+    margin-right:auto;
+    position: relative;
+}   
+
 
 .flex-container{
     display:flex;
