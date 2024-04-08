@@ -40,7 +40,7 @@
                          </button>
                     ';
                     echo '
-                        <button class="main" onclick="navigateToTimeSheet()">
+                        <button class="main" onclick="navigateToEmployeePay()">
                             <span>Payroll</span>
                          </button>
                     ';

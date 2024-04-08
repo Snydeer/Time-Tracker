@@ -2,6 +2,10 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+function navigateToEmployeePay() {
+    window.location.href = "employeepay.php";
+}
+
 function navigateToChangePay() {
     window.location.href = "changepayroll.php";
 }
@@ -71,7 +75,7 @@ function navigateToAnnouncement() {
 }
 
 function navigateToPayPeriod() {
-    window.location.href = "/payPeriod.html";
+    window.location.href = "viewpayroll.php";
 }
 
 function navigateToSettings() {
@@ -82,3 +86,15 @@ function returnBut() {
     window.location.href = "/main.html";
 }
 
+//Functions
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the dark mode toggle element
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    // Add event listener to toggle dark mode
+    darkModeToggle.addEventListener('change', function() {
+        // Toggle dark mode class on the body element
+        document.body.classList.toggle('dark-mode');
+    });
+});
