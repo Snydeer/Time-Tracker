@@ -13,6 +13,7 @@
 
             <!-- Redirect to Sign Up Page if account is not yet created-->
             <h3>Don't have an account? Sign in <a href ="signup.php" >here</a></h3>
+            
         </div>
         <div class = "error-login">
         <?php

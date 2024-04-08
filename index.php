@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +46,7 @@
                 </div>
                 <div class = "right">
                     <h1>This will be filled with different things</h1>
+                    <button onclick = "myFunction()"> Dark Mode </buttoln>
                 </div>
             </div>
            
