@@ -17,7 +17,7 @@
 
         <div class="sidenav">
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/92/Bowser_Stock_Art_2021.png" alt="bowser">
+                <img src="BigLogoV1.png" alt="Logo">
             </div>
 
             <button class="sideBut" onclick="navigateToHome()">
@@ -71,6 +71,61 @@
                 }
             ?>
         </div>
+        <header>
+        <div class="buttons">
+
+        <?php
+                if (isset($_SESSION["useruid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToCreateEmployee()">
+                            <span>Create Employee Account</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToEmployeeTimesheet()">
+                            <span>Employee Timesheet</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToAnnouncement()">
+                            <span>Create Announcements</span>
+                        </button>
+                    ';
+                } elseif (isset($_SESSION["employeeuid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToTimePunch()">
+                            <span>Time Punch</span>
+                         </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToTimeSheet()">
+                            <span>Time Sheet</span>
+                         </button>
+                    ';
+                } else {
+                    header("location: ../index.php");
+                }
+            ?>
+        
+            
+
+            <button class="main" onclick="navigateToViewAnnouncement()">
+                <span>View Announcements</span>
+              </button>
+
+            <button class="main" onclick="navigateToPayPeriod()">
+                <span>Pay Period</span>
+            </button>
+            
+            <button class="main" onclick="navigateToSettings()">
+                <span>Settings</span>
+            </button>
+            
+        
+
+        
+
+    </header>
         
 
         <script src="app/js/script.js"></script>
