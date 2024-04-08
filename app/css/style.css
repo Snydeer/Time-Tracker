@@ -7,8 +7,16 @@
 
 body {
   background-color: #e5e9f4;
-  padding: 2rem;
-  margin-left: 250px;
+  margin-top: -5px;
+  margin-left: 15%;
+  margin-right: 0px;
+}
+#nav-divider{
+  position:fixed;
+  width: 100%;
+}
+header{
+  background: #777777;
 }
 
 .confirm-container {
@@ -55,12 +63,11 @@ li {
 
 .buttons {
   display: grid;
-  width: min(75rem, 100%);
+  width: min(60rem, 100%);
   margin-inline: auto;
-  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
-  gap: 2rem;
-  margin-top: 200px;
-  
+  grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+  gap: .5rem;
+  margin-top: 5px;
   /* padding-left: 30px; */
 }
 
@@ -80,22 +87,24 @@ li {
 
 button.main, .sideBut {
   container-type: inline-size;
-  aspect-ratio: 2/1;
   border: 0.5rem solid transparent;
-  border-radius: 1rem;
+  border-radius: 0rem;
   color: hsl(0, 0%, 10%);
-  background: none;
+  background: hsl(211, 71%, 84%);
   display: grid;
   place-content: center;
-  gap: 1rem;
+  /* gap: 10%; */
   --shadow:
     -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   outline: none;
-  transition: all 0.2s;
+  transition: all 0.15s;
   margin-left: -10px;
+  width: 100%;
+  height:100%
 }
+
 
 button.choose {
   container-type: inline-size;
@@ -150,7 +159,7 @@ button.main > i, button.main.active > i {
 
 button.main > span, button.main.active > span {
   font-family: system-ui, sans-serif;
-  font-size: 16cqi;
+  /* font-size: 100%; */
 }
 
 .sideBut {
@@ -164,8 +173,8 @@ button.main > span, button.main.active > span {
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 20px auto;
-  width: 120px;
-  height: 120px;
+  width: 50%;
+  height: 14%;
   white-space: nowrap;
 }
 
@@ -183,7 +192,7 @@ button.main > span, button.main.active > span {
 
 .sidenav {
   height: 100%;
-  width: 250px;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -197,8 +206,8 @@ button.main > span, button.main.active > span {
   border: 2px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  width: 210px;
-  height: 150px;
+  width: 50%;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
