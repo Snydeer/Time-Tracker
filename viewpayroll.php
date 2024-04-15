@@ -1,7 +1,7 @@
-<?php
-session_start();
-include_once 'connection.php';
 
+<?php
+include_once 'header.php';
+include_once 'connection.php';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
