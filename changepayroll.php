@@ -1,11 +1,6 @@
 <?php
     session_start();
-
-
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+   include_once 'connection.php';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -54,3 +49,4 @@ if (isset($_SESSION['useruid']) && isset($_SESSION['company'])) {
 
 $dbh = null;
 ?>
+
