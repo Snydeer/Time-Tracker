@@ -86,6 +86,7 @@ function returnBut() {
     window.location.href = "/main.html";
 }
 
+
 //Dark Mode Functions
 
 let button = document.getElementById("darkmode");
@@ -113,3 +114,4 @@ window.onload = function() {
         body.classList.add('light');
     }
 };
+

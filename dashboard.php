@@ -2,6 +2,7 @@
     include_once 'header.php';
 ?>
     <html>
+
     <body>
         <h1> Main Dashboard</h1>
         <div class="buttons">
@@ -64,6 +65,8 @@
         
 
     </body>
+
+    
 </html>
 
 <?php

@@ -1,3 +1,4 @@
+
 <?php
 include_once 'header.php';
 include_once 'connection.php';
@@ -31,3 +32,4 @@ try {
 
 include_once 'footer.php';
 ?>
+
