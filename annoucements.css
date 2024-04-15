@@ -1,0 +1,40 @@
+*{
+    color: var(--text1);
+}
+
+:root{
+    --text1: #0a6828;
+    --text2: #1e1e1e;
+    --main1: #e2e542d5;
+    --main2: #51a512;
+    --secondary1: #2da694;
+    --secondary2: #a4a4a4 ;
+    --hover1: rgb(255, 0, 208);
+    --hover2: rgb(0, 102, 255) ;
+
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 163px;
+    height: 24px;
+    top: 377px;
+    left: 1424px;
+    gap: 0px;
+    opacity: 0px;
+    
+}
+
+form {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: center;
+
+}
