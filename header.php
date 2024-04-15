@@ -91,6 +91,21 @@
                             <span>Create Announcements</span>
                         </button>
                     ';
+                    echo '
+                        <button class="main" onclick="navigateToViewAnnouncement()">
+                            <span>View Announcements</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToPayPeriod()">
+                            <span>Pay Period</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToSettings()">
+                            <span>Settings</span>
+                        </button>
+                    ';
                 } elseif (isset($_SESSION["employeeuid"])) {
                     echo '
                         <button class="main" onclick="navigateToTimePunch()">
@@ -103,22 +118,18 @@
                          </button>
                     ';
                 } else {
-                    header("location: ../index.php");
+                    // header("location: ../index.php");
                 }
             ?>
         
             
 
-            <button class="main" onclick="navigateToViewAnnouncement()">
-                <span>View Announcements</span>
-              </button>
 
-            <button class="main" onclick="navigateToPayPeriod()">
-                <span>Pay Period</span>
-            </button>
+
             
-            <button class="main" onclick="navigateToSettings()">
-                <span>Settings</span>
+            
+            <button class="main" onclick="navigateToHome()">
+                <span>Home</span>
             </button>
             
         
