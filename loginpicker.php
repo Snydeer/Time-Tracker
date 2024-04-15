@@ -2,10 +2,6 @@
     include_once 'header.php';
 ?>
 
-        
-        
-
-
         <html>
     <body>
     <h1>Employee or Company Manager?</h1>

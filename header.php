@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="app/css/style.css">
 </head>
-<body>
+<body class = "light">
     
 
         <div class="sidenav">

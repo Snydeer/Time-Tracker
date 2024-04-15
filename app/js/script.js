@@ -2,6 +2,10 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+function navigateToEmployeePay() {
+    window.location.href = "employeepay.php";
+}
+
 function navigateToChangePay() {
     window.location.href = "changepayroll.php";
 }
@@ -71,7 +75,7 @@ function navigateToAnnouncement() {
 }
 
 function navigateToPayPeriod() {
-    window.location.href = "/payPeriod.html";
+    window.location.href = "viewpayroll.php";
 }
 
 function navigateToSettings() {
@@ -81,4 +85,33 @@ function navigateToSettings() {
 function returnBut() {
     window.location.href = "/main.html";
 }
+
+
+//Dark Mode Functions
+
+let button = document.getElementById("darkmode");
+let body = document.getElementById('body')
+
+function toggleDarkMode(){
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
+
+        // Store the current state in localStorage
+        let isDarkMode = body.classList.contains('dark');
+        localStorage.setItem('dark', isDarkMode);
+}
+
+button.addEventListener('click', toggleDarkmode);
+
+// Check localStorage for the dark mode preference when the page loads
+window.onload = function() {
+    let isDarkMode = localStorage.getItem('dark') === 'true';
+
+    // Set the body class based on the stored preference
+    if (isDarkMode) {
+        body.classList.add('dark');
+    } else {
+        body.classList.add('light');
+    }
+};
 

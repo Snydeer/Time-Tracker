@@ -45,6 +45,7 @@ class LoginEmployee extends Dbh {
             $_SESSION["employeeid"] = $user[0]["employees_id"];
             $_SESSION["employeeuid"] = $user[0]["employees_uid"];
             $_SESSION["employeename"] = $user[0]["employees_name"];
+            $_SESSION["company"] = $user[0]["employees_company"];
 
             $stmt = null;
         }

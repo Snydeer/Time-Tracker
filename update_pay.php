@@ -1,14 +1,13 @@
 <?php
 session_start();
+include_once 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $pay_amounts = $_POST["pay_amount"];
     $employees_uids = $_POST["employees_uid"];
 
-    $host = 'localhost';
-    $dbname = 'OOPSWE';
-    $username = 'root';
-    $password = '';
+    //include_once 'connection.php';
+
 
     try {
         $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -37,3 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     exit();
 }
 ?>
+

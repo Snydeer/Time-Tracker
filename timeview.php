@@ -1,12 +1,10 @@
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
 ?>
 
 <?php
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
