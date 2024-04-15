@@ -2,6 +2,22 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+function navigateToEmployeePay() {
+    window.location.href = "employeepay.php";
+}
+
+function navigateToChangePay() {
+    window.location.href = "changepayroll.php";
+}
+
+function navigateToPwChange() {
+    window.location.href = "changepassword.php";
+}
+
+function navigateToViewAnnouncement() {
+    window.location.href = "viewannouncements.php";
+}
+
 function navigateToEmployeeLogin() {
     window.location.href = "loginemployee.php";
 }
@@ -24,6 +40,10 @@ function navigateToDashboard() {
 
 function navigateToHome() {
     window.location.href = "index.php";
+}
+
+function navigateToProfile() {
+    window.location.href = "profile.php";
 }
 
 function navigateToLogout() {
@@ -51,11 +71,11 @@ function navigateToSchedule() {
 }
 
 function navigateToAnnouncement() {
-    window.location.href = "/announcements.html";
+    window.location.href = "createannouncement.php";
 }
 
 function navigateToPayPeriod() {
-    window.location.href = "/payPeriod.html";
+    window.location.href = "viewpayroll.php";
 }
 
 function navigateToSettings() {
@@ -66,37 +86,30 @@ function returnBut() {
     window.location.href = "/main.html";
 }
 
+//Dark Mode Functions
 
-
-/**/
-
-//get root
-var r = document.querySelector(':root')
-
-//create function for changing variable 
+let button = document.getElementById("darkmode");
+let body = document.getElementById('body')
 
 function toggleDarkMode(){
-    var rs = getComputerStyle(r);
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
 
-
-    //get temp value 
-    var text = rs.getPropertyValue('--text1');
-    var main = rs.getPropertyValue('--main1');
-    var secondary = rs.getPropertyValue('--secondary1');
-    var hover = rs.getPropertyValue('--hover1');
-
-    //set primary to secondary
-    r.computedStyleMap.setProperty('--text1', rs.getPropertyValue('--text2'));
-    r.computedStyleMap.setProperty('--main1', rs.getPropertyValue('--main2'));
-    r.computedStyleMap.setProperty('--secondary1', rs.getPropertyValue('--secondary2'));
-    r.computedStyleMap.setProperty('--hover1',rs.getPropertyValue('--hover2'));
-
-
-    //set secondary to temp
-    r.computedStyleMap.setProperty('--text2',text);
-    r.computedStyleMap.setProperty('--main2',main);
-    r.computedStyleMap.setProperty('--secondary2',secondary);
-    r.computedStyleMap.setProperty('--hover2', hover);
-
-
+        // Store the current state in localStorage
+        let isDarkMode = body.classList.contains('dark');
+        localStorage.setItem('dark', isDarkMode);
 }
+
+button.addEventListener('click', toggleDarkmode);
+
+// Check localStorage for the dark mode preference when the page loads
+window.onload = function() {
+    let isDarkMode = localStorage.getItem('dark') === 'true';
+
+    // Set the body class based on the stored preference
+    if (isDarkMode) {
+        body.classList.add('dark');
+    } else {
+        body.classList.add('light');
+    }
+};

@@ -12,16 +12,47 @@
 
     <section class="Picker">
         <h2>Welcome, <?php echo $current; ?>!</h2>
-        <?php
-                    if (isset($_SESSION["useruid"])) {
-                        echo "<li><a href = 'changepassword.php'>Change Password</a></li>";
-                    } elseif (isset($_SESSION["employeeuid"])) {
-                        echo "<li><a href = 'changepassword.php'>Change Password</a></li>";
-                    } 
-
-                ?>
      </section>
 
+     <div class="buttons">
+
+        <?php
+                if (isset($_SESSION["useruid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToPwChange()">
+                            <span>Change Password</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToChangePay()">
+                            <span>View Employee Pay</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToSettings()">
+                            <span>Settings</span>
+                        </button>
+                    ';
+                } elseif (isset($_SESSION["employeeuid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToPwChange()">
+                            <span>Change Password</span>
+                         </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToEmployeePay()">
+                            <span>Payroll</span>
+                         </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToSettings()">
+                            <span>Settings</span>
+                         </button>
+                    ';
+                } else {
+                    header("location: ../index.php");
+                }
+            ?>
 
 <?php
     include_once 'footer.php';

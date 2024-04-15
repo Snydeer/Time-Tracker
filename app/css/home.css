@@ -1,21 +1,33 @@
 *{
     color: var(--text1);
+    font-family: arial;
 }
 
-:root{
-    --text1: #353535;
-    --text2: #D9D9D9;
-    --main1: #D9D9D9;
-    --main2: #5f5d5d;
-    --secondary1: #3C6E71;
-    --secondary2: #3C6E71 ;
-    --hover1: #284B63;
-    --hover2: #284B63 ;
+.dark{
+    --text1: #FFFFFF;
+    --text2: #FFFFFF;
+    --bkg: #1D1B1B;
+    --bkg2: #545353;
+    --main: #1A858C;
+    --secondary: #366586;
+    --hover1: #1A858C;
+    --hover2: #1A858C;
+}
+
+.light{
+    --text1: #1D1B1B;
+    --text2: #FFFFFF;
+    --bkg: #FFFFFF;
+    --bkg2: #D9D9D9;
+    --main: #1A858C;
+    --secondary: #366586;
+    --hover1: #1A858C;
+    --hover2: #1A858C;
 }
 
 
 html,body{
-    background-color: var(--main1);
+    background-color: var(--bkg);
 }
 
 body{
@@ -27,7 +39,7 @@ header{
     margin: 0px 0px 5px 0px;
     padding: 0px;
     height: 15vh;
-    background-color: var(--secondary1);
+    background-color: var(--main);
   }
 
 main{
@@ -38,7 +50,26 @@ main{
 
 }
 
+.title{
+    font-size: 7vh; 
+    color: var(--main);
+}
 
+.sub{
+    font-size: 4vh;
+    }
+
+.sub2{
+    font-size: 3vh;
+}
+
+
+#main-image{
+    width: 70vh;
+    border-radius: 4px;
+    padding: 5px;
+
+}
 #nav-divider{
     position:fixed;
     width: 100%;
@@ -52,10 +83,6 @@ main{
     position: relative;
 }   
 
-#about{
-    
-
-}
 
 .flex-container{
     display:flex;
@@ -77,7 +104,7 @@ main{
 
 .login-bttn:hover{
     background-color: var(--hover1);
-    color: white;
+    color: var(--text1);
 }
 
 .txt-bttn{
@@ -92,7 +119,7 @@ main{
 }
 
 .login-bttn{
-    background-color: var(--main1);
+    background-color: var(--bkg);
     border: none;
     padding: 5px 45px;
     margin: 10px;
@@ -113,4 +140,13 @@ main{
     border-left : 3px solid black;
     height: 50px;
 
+  }
+
+  .header-text{
+    color: var(--text2);
+    width: 4v;
+  }
+
+  .darkmode{
+    background-color: var(--bkg);
   }

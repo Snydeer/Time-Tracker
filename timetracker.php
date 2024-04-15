@@ -1,6 +1,8 @@
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
     date_default_timezone_set('America/New_York');
+    error_reporting(0);
 ?>
 
 <script>
@@ -18,10 +20,7 @@ $display = true;
 
 //connection to sql
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -140,7 +139,7 @@ function getMostRecentTimeTrackingDetails($dbh, $username) {
                 <span>Clock out</span>
                 </button>
                 </form>
-            <?php elseif ($mostRecentTrackingDetails['elapsed_time'] === null) : ?>
+            <?php elseif ($mostRecentTrackingDetails['elapsed_time'] === null && $mostRecentTrackingDetails['start_time'] !== null) : ?>
                 <div class="title">Currently Tracking</div>
                 <p>Start Time: <?php echo $mostRecentTrackingDetails['start_time']; ?></p>
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
