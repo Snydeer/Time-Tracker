@@ -42,6 +42,8 @@
                     echo '
 
                         <button class="main" onclick="navigateToEmployeePay()">
+                            <span> Employee Pay</span>
+                        </button>
 
                         <button class="main" onclick="navigateToTimeSheet()">
 
