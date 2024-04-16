@@ -101,11 +101,7 @@
                             <span>Pay Period</span>
                         </button>
                     ';
-                    echo '
-                        <button class="main" onclick="navigateToSettings()">
-                            <span>Settings</span>
-                        </button>
-                    ';
+
                 } elseif (isset($_SESSION["employeeuid"])) {
                     echo '
                         <button class="main" onclick="navigateToTimePunch()">

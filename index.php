@@ -12,8 +12,8 @@
 <body class ="light">
     <header class = "remove-margin flex-container" id = "nav-divider">
         <!--have the logo be all the way to the side -->
-        <div id = "logo" class = "left">
-            <h1 id = "logo-txt">AC</h1>
+        <div class="image-container">
+            <img src="BigLogoV1.png" alt="Logo" width="100em">
         </div>
         <!-- use flex for buttons on the side -->
         <div id = "nav-bttn" class = "flex-container right">
