@@ -1,22 +1,22 @@
 <?php
-    include_once 'header.php';
-    include_once 'connection.php';
-    date_default_timezone_set('America/New_York');
-    error_reporting(0);
+include_once 'header.php';
+include_once 'connection.php';
+date_default_timezone_set('America/New_York');
+error_reporting(0);
 ?>
 
 <script>
-//sets timezone to whatever location the user is accessing from
-var timezoneOffsetMinutes = new Date().getTimezoneOffset();
+    //sets timezone to whatever location the user is accessing from
+    var timezoneOffsetMinutes = new Date().getTimezoneOffset();
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'set_timezone.php?timezone_offset=' + timezoneOffsetMinutes, true);
-xhr.send();
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'set_timezone.php?timezone_offset=' + timezoneOffsetMinutes, true);
+    xhr.send();
 </script>
 
 <?php
 
-$display = true; 
+$display = true;
 
 //connection to sql
 
@@ -33,33 +33,36 @@ $mostRecentTrackingDetails = getMostRecentTimeTrackingDetails($dbh, $_SESSION['e
 
 //begin time tracking function
 
-function startTimeTracking($dbh, $username) {
+function startTimeTracking($dbh, $username)
+{
     $stmt = $dbh->prepare("INSERT INTO time_tracking (start_time, username) VALUES (NOW(), ?)");
     $stmt->execute([$username]);
     $_SESSION['tracking_id'] = $dbh->lastInsertId();
-    $_SESSION['start_time'] = date('Y-m-d H:i:s'); 
+    $_SESSION['start_time'] = date('Y-m-d H:i:s');
     //var_dump($_SESSION['start_time']); (debugging)
 }
 
 //stopping
 
-function stopTimeTracking($dbh) {
+function stopTimeTracking($dbh)
+{
     if (isset($_SESSION['tracking_id'])) {
         $display = true;
         $tracking_id = $_SESSION['tracking_id'];
         $original_start_time = $_SESSION['start_time'];
         $stmt = $dbh->prepare("UPDATE time_tracking SET end_time = NOW(), start_time = ?, elapsed_time = TIMESTAMPDIFF(SECOND, ?, NOW()) WHERE id = ?");
         $stmt->execute([$original_start_time, $original_start_time, $tracking_id]);
-        
-        unset($_SESSION['tracking_id']); 
-        unset($_SESSION['start_time']); 
-        $mostRecentTrackingDetails = getMostRecentTimeTrackingDetails($dbh, $_SESSION['employeeuid']); 
+
+        unset($_SESSION['tracking_id']);
+        unset($_SESSION['start_time']);
+        $mostRecentTrackingDetails = getMostRecentTimeTrackingDetails($dbh, $_SESSION['employeeuid']);
     }
 }
 
 //getting the current details to send to database
 
-function getTimeTrackingDetails($dbh, $tracking_id) {
+function getTimeTrackingDetails($dbh, $tracking_id)
+{
     $stmt = $dbh->prepare("SELECT start_time, end_time, elapsed_time FROM time_tracking WHERE id = ?");
     $stmt->execute([$tracking_id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -82,10 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function stopAfterTimeTracking($dbh) {
+function stopAfterTimeTracking($dbh)
+{
     // Retrieve the most recent tracking details
     $mostRecentTrackingDetails = getMostRecentTimeTrackingDetails($dbh, $_SESSION['employeeuid']);
-    
+
     if ($mostRecentTrackingDetails && isset($mostRecentTrackingDetails['id'])) {
         $tracking_id = $mostRecentTrackingDetails['id'];
         $before = $mostRecentTrackingDetails['start_time'];
@@ -97,7 +101,8 @@ function stopAfterTimeTracking($dbh) {
 
 //gets the most recent amount of work time
 
-function getMostRecentTimeTrackingDetails($dbh, $username) {
+function getMostRecentTimeTrackingDetails($dbh, $username)
+{
     $stmt = $dbh->prepare("SELECT id, start_time, end_time, elapsed_time FROM time_tracking WHERE username = ? ORDER BY start_time DESC LIMIT 1");
     $stmt->execute([$username]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -114,15 +119,16 @@ function getMostRecentTimeTrackingDetails($dbh, $username) {
 <html lang="en">
 
 <div style="text-align: center;">
- <!--var_dump($mostRecentTrackingDetails); -->
+    <!--var_dump($mostRecentTrackingDetails); -->
 </div>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Tracker</title>
 </head>
 
-        
+
 
 <body>
     <h1>Time Tracker</h1>
@@ -130,34 +136,34 @@ function getMostRecentTimeTrackingDetails($dbh, $username) {
     <div class="timesheetbox">
 
 
-            <?php if (isset($_SESSION['tracking_id'])) : ?>
-                <div class="title">Currently Tracking</div>
-                <?php $trackingDetails = getTimeTrackingDetails($dbh, $_SESSION['tracking_id']); ?>
-                <p>Start Time: <?php echo $trackingDetails['start_time']; ?></p>
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <button class="timeSheetBut" type="submit" name="stop">
-                <span>Clock out</span>
+        <?php if (isset($_SESSION['tracking_id'])) : ?>
+            <div class="title">Currently Tracking</div>
+            <?php $trackingDetails = getTimeTrackingDetails($dbh, $_SESSION['tracking_id']); ?>
+            <p>Start Time: <?php echo $trackingDetails['start_time']; ?></p>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <button class="timeSheetBut" type="submit" name="stop">
+                    <span>Clock out</span>
                 </button>
-                </form>
-            <?php elseif ($mostRecentTrackingDetails['elapsed_time'] === null && $mostRecentTrackingDetails['start_time'] !== null) : ?>
-                <div class="title">Currently Tracking</div>
-                <p>Start Time: <?php echo $mostRecentTrackingDetails['start_time']; ?></p>
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <button class="timeSheetBut" type="submit" name="stopafter">
-                <span>Clock out</span>
+            </form>
+        <?php elseif ($mostRecentTrackingDetails['elapsed_time'] === null && $mostRecentTrackingDetails['start_time'] !== null) : ?>
+            <div class="title">Currently Tracking</div>
+            <p>Start Time: <?php echo $mostRecentTrackingDetails['start_time']; ?></p>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <button class="timeSheetBut" type="submit" name="stopafter">
+                    <span>Clock out</span>
                 </button>
-                </form>
+            </form>
 
-            <?php else : ?>
-                <div class="title">Time Not Tracked</div>
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <button class="timeSheetBut" type="submit" name="start">
-                <span>Clock in</span>
+        <?php else : ?>
+            <div class="title">Time Not Tracked</div>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <button class="timeSheetBut" type="submit" name="start">
+                    <span>Clock in</span>
                 </button>
-                </form>
-            <?php endif; ?>
+            </form>
+        <?php endif; ?>
 
-        </div>
+    </div>
 </body>
 
 
@@ -176,7 +182,7 @@ if ($mostRecentTrackingDetails && !$mostRecentTrackingDetails['elapsed_time'] &&
 if ($mostRecentTrackingDetails) {
 
     $startTime = date("F j, Y, g:i a", strtotime($mostRecentTrackingDetails['start_time']));
-    
+
     $endTime = date("F j, Y, g:i a", strtotime($mostRecentTrackingDetails['end_time']));
 
     $elapsedTime = $mostRecentTrackingDetails['elapsed_time'];
@@ -200,5 +206,5 @@ if ($mostRecentTrackingDetails) {
 <?php echo "<p>$lastTrackingMessage</p>"; ?>
 
 <?php
-    include_once 'footer.php';
+include_once 'footer.php';
 ?>

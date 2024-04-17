@@ -1,25 +1,26 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Homepage</title>
-    <link rel = "stylesheet" href = "app/css/home.css">
+    <link rel="stylesheet" href="app/css/home.css">
 </head>
 
-<body class ="light">
-    <header class = "remove-margin flex-container" id = "nav-divider">
+<body class="light">
+    <header class="remove-margin flex-container" id="nav-divider">
         <!--have the logo be all the way to the side -->
         <div class="image-container">
             <img src="BigLogoV1.png" alt="Logo" width="100em">
         </div>
         <!-- use flex for buttons on the side -->
-        <div id = "nav-bttn" class = "flex-container right">
-           <button class ="darkmode"></button>
-           <a href = ""><button class ="txt-bttn header-text">about</button></a>
-           <a href = "dashboard.php"><button class = "txt-bttn header-text">dashboard</button></a>
+        <div id="nav-bttn" class="flex-container right">
+            <button class="darkmode"></button>
+            <a href=""><button class="txt-bttn header-text">about</button></a>
+            <a href="dashboard.php"><button class="txt-bttn header-text">dashboard</button></a>
             <?php
 
             if (isset($_SESSION['useruid']) || isset($_SESSION['employeeuid'])) {
@@ -33,14 +34,14 @@
 
     </header>
 
-   
+
     <main>
-        <div id = "about" >
-            <div class ="flex-container">
-                <div class = "left">
-                    <h1 class = "title">Agile Company Time Tracker</h1>
-                    <h2 class = "sub">This is a site that does cool things</h2>
-                    <h3 class = "sub2">Includes Features</h3>
+        <div id="about">
+            <div class="flex-container">
+                <div class="left">
+                    <h1 class="title">Agile Company Time Tracker</h1>
+                    <h2 class="sub">This is a site that does cool things</h2>
+                    <h3 class="sub2">Includes Features</h3>
                     <h3>
                         <ul>
                             <li>schedule</li>
@@ -50,15 +51,15 @@
                         </ul>
                     </h3>
                 </div>
-                <div class = "right">
-                    <img id  = "main-image" src = "resources/actt.png" ></img>
+                <div class="right">
+                    <img id="main-image" src="resources/actt.png"></img>
                 </div>
             </div>
-           
+
 
         </div>
     </main>
-    
+
 </body>
 
 
@@ -67,5 +68,5 @@
 </html>
 
 <?php
-    include_once 'footer.php';
+include_once 'footer.php';
 ?>
