@@ -106,7 +106,7 @@ button.main, .sideBut {
   border: 0.5rem solid transparent;
   border-radius: 1rem;
   color: hsl(0, 0%, 10%);
-  background: none;
+  background: hsl(190, 32%, 38%);
   display: grid;
   place-content: center;
   /* gap: 10%; */
@@ -117,8 +117,9 @@ button.main, .sideBut {
   outline: none;
   transition: all 0.15s;
   margin-left: -10px;
-  width: 100%;
-  height:100% 
+  width: 150px;
+  height:50px;
+  margin-top: 10px; 
 }
 
 
@@ -184,7 +185,7 @@ button.main > span, button.main.active > span {
   padding: 10px 40px;
   border-radius: 10px;
   color: hsl(0, 0%, 100%);
-  background-color: #8b8b8b;
+  background-color: #545353;
   font-family: var(--buttonFont);
   font-size: 1.4em;
   text-align: center;
@@ -327,7 +328,7 @@ button.random, .sideBut {
   aspect-ratio: 1/1;
   border: 0.5rem solid transparent;
   border-radius: 1.5rem; /* Increased border-radius to make the button bigger */
-  color: hsl(0, 0%, 10%);
+  color: hsl(190, 32%, 38%);
   background: var(--main);
   display: grid;
   place-content: center;
