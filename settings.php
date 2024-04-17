@@ -5,8 +5,8 @@
 
 <html>
     <body>
-        <h1> Settings</h1>
-        <p> User Profile:</p>
+        <h1>Settings</h1>
+        <p>User Profile:</p>
         <p>Company: <?php echo $_SESSION['company']; ?></p>
         <p><?php echo $_SESSION['company']; ?></p>
         

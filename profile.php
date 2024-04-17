@@ -29,10 +29,18 @@
                         </button>
                     ';
                     echo '
+                        <button class="main" onclick="navigateToViewEmployees()">
+                            <span>View Employees</span>
+
+                        </button>
+                    ';
+                    echo '
                         <button class="main" onclick="navigateToSettings()">
                             <span>Settings</span>
                         </button>
                     ';
+
+                    
                 } elseif (isset($_SESSION["employeeuid"])) {
                     echo '
                         <button class="main" onclick="navigateToPwChange()">

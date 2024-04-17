@@ -2,6 +2,11 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
+
+function navigateToViewEmployees() {
+    window.location.href = "viewallemployees.php";
+}
+
 function navigateToEmployeePay() {
     window.location.href = "employeepay.php";
 }
