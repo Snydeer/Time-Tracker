@@ -1,18 +1,20 @@
 <?php
 
-class TimeContr extends TimeTrack {
+class TimeContr extends TimeTrack
+{
 
     private $uid;
     private $pwd;
 
-    public function __construct($uid, $pwd) 
+    public function __construct($uid, $pwd)
     {
         $this->uid = $uid;
         $this->pwd = $pwd;
     }
 
-    public function loginUser() {
-        if($this->emptyInput() == false) {
+    public function loginUser()
+    {
+        if ($this->emptyInput() == false) {
             header("location: ../login.php?error=emptyinput");
             exit();
         }
@@ -20,15 +22,14 @@ class TimeContr extends TimeTrack {
         $this->getUser($this->uid, $this->pwd);
     }
 
-    private function emptyInput() {
+    private function emptyInput()
+    {
         $result = false;
         if (empty($this->uid) || empty($this->pwd)) {
             $result = false;
-        }
-        else {
+        } else {
             $result = true;
         }
         return $result;
     }
-
 }

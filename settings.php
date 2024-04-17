@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+include_once 'header.php';
 ?>
 
 <html>
@@ -11,14 +11,9 @@
         <div>
             <button type="submit" name="redirect">View Time Tracking</button>
         </div>
-        
-        
-            
-        
+  
+</body>
 
-        
-
-    </body>
 </html>
 
 <?php

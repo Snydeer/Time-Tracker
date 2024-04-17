@@ -1,10 +1,28 @@
 @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
 body {
   background-color: var(--bkg);
+  margin-top: -5px;
+  margin-left: 15%;
+  margin-right: 0px;
+}
+#nav-divider{
+  position:fixed;
+  width: 100%;
+}
+header{
+  background: var(--main);
+  height: 4.5em;
+
   padding: 2rem;
 }
 
 :root{
+   --link: rgb(4, 0, 128);
+  --hover: purple;
   --text1: #1D1B1B;
   --text2: #FFFFFF;
   --bkg: #FFFFFF;
@@ -23,6 +41,7 @@ body {
   --secondary: #366586;
   --hover1: #1A858C;
   --hover2: #1A858C;
+
 }
 
 .confirm-container {
@@ -71,9 +90,12 @@ li {
   display: grid;
   width: min(75rem, 100%);
   margin-inline: auto;
-  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
-  gap: 2rem;
-  margin-top: 200px;
+
+  grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+  gap: .5rem;
+  margin-top: 5px;
+  /* padding-left: 30px; */
+
 }
 
 .clockButtons {
@@ -91,12 +113,14 @@ li {
 }
 
 button.main, .sideBut {
+  /* Top nav buttons*/
   container-type: inline-size;
-  aspect-ratio: 1/1;
+
   border: 0.5rem solid transparent;
   border-radius: 1rem;
-  color: hsl(0, 0%, 10%);
-  background: none;
+  color: hsl(0, 0%, 0%);
+  background: hsl(190, 32%, 38%);
+
   display: grid;
   place-content: center;
   gap: 1rem;
@@ -105,7 +129,13 @@ button.main, .sideBut {
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
   box-shadow: var(--shadow);
   outline: none;
-  transition: all 0.1s;
+
+  transition: all 0.15s;
+  margin-left: -10px;
+  width: 150px;
+  height:50px;
+  margin-top: 10px;
+
 }
 
 button.choose {
@@ -148,6 +178,7 @@ button.choose > span, button.choose.active > span {
 button.main:hover, button.main:focus-visible, .sideBut:hover, .sideBut:focus {
   color: hsl(10, 80%, 50%);
   scale: 1.1;
+  background-color: var(--hover1);
 }
 
 button.main:active, button.main.active, .sideBut:active, .sideBut.active {
@@ -160,17 +191,18 @@ button.main > i, button.main.active > i {
 }
 
 button.main > span, button.main.active > span {
-  font-family: system-ui, sans-serif;
-  font-size: 16cqi;
+  font-family: var(--buttonFont);
+  font-size: 105%;
 }
 
 .sideBut {
+  /* side nav buttons */
   padding: 10px 40px;
   border-radius: 10px;
   color: hsl(0, 0%, 100%);
-  background-color: #8b8b8b;
-  font-family: system-ui, sans-serif;
-  font-size: 18px;
+  background-color: #545353;
+  font-family: var(--buttonFont);
+  font-size: 1.4em;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
@@ -181,7 +213,8 @@ button.main > span, button.main.active > span {
 }
 
 .sideBut:hover {
-  background-color: #727272;
+  background-color: var(--hover1);
+  /* side nav button color */
 }
 
 .sideBut:focus {
@@ -199,7 +232,7 @@ button.main > span, button.main.active > span {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #777777;
+  background-color: var(--main);
   overflow-x: hidden;
   padding-top: 50px;
 }
@@ -311,14 +344,14 @@ button.random, .sideBut {
   border: 0.5rem solid transparent;
   border-radius: 1.5rem; /* Increased border-radius to make the button bigger */
   color: hsl(0, 0%, 10%);
-  background: none;
+  background: hsl(190, 32%, 38%);
   display: grid;
   place-content: center;
   gap: 1rem;
   --shadow:
     -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   outline: none;
   transition: all 0.1s;
 }
@@ -453,29 +486,79 @@ h2 {
   margin: 0 10px; /* Adjust margin as needed */
 }
 
-.center-text {
-  text-align: center;
+a{
+color: var(--link);
 }
 
-.settings-container {
+a:hover{
+color: var(--hover);
+}
+
+
+.form-payroll-employee {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
-body {
-  transition: background-color 0.5s, color 0.5s;
+.form-payroll-employee label {
+  margin-bottom: 8px;
 }
+
+.form-payroll-employee input,
+.form-payroll-employee button {
+  margin-bottom: 16px;
+}
+
+
+.changepassword body {
+  text-align: center; 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; 
 
 /* .dark-mode {
   background-color: #1a1a1a;
   color: #ffffff;
 }
 
-body.dark-mode {
-  background-color: #333;
-  color: #fff;
-}   
+.changepassword form {
+  display: inline-block; 
+  text-align: left; 
+}
+
+
+.changepassword p.error-message {
+  color: red;
+  margin-top: 10px; 
+}
+
+.payroll-form-manager {
+  text-align: center;
+}
+
+.payroll-form-manager-title {
+  margin-bottom: 20px;
+}
+
+.payroll-form-container {
+  display: inline-block;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+}
 
 /* Additional styles for dark mode 
 .dark-mode .header {
@@ -487,3 +570,4 @@ body.dark-mode {
   background-color: #111;
   color: #fff;
 } */
+

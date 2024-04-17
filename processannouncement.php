@@ -1,16 +1,16 @@
 <?php
-    include_once 'header.php';
-    include_once 'connection.php';
-    date_default_timezone_set('America/New_York');
+include_once 'header.php';
+include_once 'connection.php';
+date_default_timezone_set('America/New_York');
 ?>
 
 <script>
-//sets timezone to whatever location the user is accessing from
-var timezoneOffsetMinutes = new Date().getTimezoneOffset();
+    //sets timezone to whatever location the user is accessing from
+    var timezoneOffsetMinutes = new Date().getTimezoneOffset();
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'set_timezone.php?timezone_offset=' + timezoneOffsetMinutes, true);
-xhr.send();
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'set_timezone.php?timezone_offset=' + timezoneOffsetMinutes, true);
+    xhr.send();
 </script>
 
 <?php

@@ -1,18 +1,20 @@
 <?php
 
-class LoginEmployeeContr extends LoginEmployee {
+class LoginEmployeeContr extends LoginEmployee
+{
 
     private $uid;
     private $pwd;
 
-    public function __construct($uid, $pwd) 
+    public function __construct($uid, $pwd)
     {
         $this->uid = $uid;
         $this->pwd = $pwd;
     }
 
-    public function loginUser() {
-        if($this->emptyInput() == false) {
+    public function loginUser()
+    {
+        if ($this->emptyInput() == false) {
             header("location: ../loginemployee.php?error=emptyinput");
             exit();
         }
@@ -20,15 +22,14 @@ class LoginEmployeeContr extends LoginEmployee {
         $this->getUser($this->uid, $this->pwd);
     }
 
-    private function emptyInput() {
+    private function emptyInput()
+    {
         $result = false;
         if (empty($this->uid) || empty($this->pwd)) {
             $result = false;
-        }
-        else {
+        } else {
             $result = true;
         }
         return $result;
     }
-
 }
