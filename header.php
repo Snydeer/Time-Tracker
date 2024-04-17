@@ -5,40 +5,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/css/style.css">
 </head>
-<body>
+<body class = "light">
     
-    <nav>
-        <div class="wrapper">
-            
-            <ul>
-                <li><a href = "index.php">Home</a></li>
-                <li><a href = "index.php">Discover</a></li>
-                <li><a href = "index.php">About Us</a></li>
-                <?php
-                    if (isset($_SESSION["useruid"])) {
-                        echo "<p>Hello there " . $_SESSION["username"] . "</p>";
-                        echo "<li><a href = 'profile.php'>Profile page</a></li>"; //not developed yet but will be soon
-                        echo "<li><a href = 'create.php'>Create Account for Employees</a></li>";
-                        echo "<li><a href = 'timemanager.php'>Time Manager</a></li>";
-                        echo "<li><a href = 'includes/logout.inc.php'>Log out</a></li>";
-                    } elseif (isset($_SESSION["employeeuid"])) {
-                        echo "<p>Hello there " . $_SESSION["employeename"] . "</p>";
-                        echo "<li><a href = 'profile.php'>Profile page</a></li>"; //not developed yet but will be soon
-                        echo "<li><a href = 'timetracker.php'>Time Tracker</a></li>";
-                        echo "<li><a href = 'timeview.php'>Time Viewer</a></li>";
-                        echo "<li><a href = 'includes/logout.inc.php'>Log out</a></li>";
-                    } else {
-                        echo "<li><a href = 'signup.php'>Sign Up</a></li>";
-                        echo "<li><a href = 'loginpicker.php'>Log in</a></li>";
-                    }
 
-                ?>
-            </ul>
+        <div class="sidenav">
+            <div class="image-container">
+                <img src="BigLogoV1.png" alt="Logo">
+            </div>
+
+            <button class="sideBut" onclick="navigateToHome()">
+                <span>Home</span>
+            </button>
+
+            <?php
+                if (isset($_SESSION["useruid"])) {
+                    echo '
+                        <button class="sideBut" onclick="navigateToDashboard()">
+                            <span>Dashboard</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToProfile()">
+                            <span>Profile</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToLogout()">
+                            <span>Logout</span>
+                        </button>
+                    ';
+                } elseif (isset($_SESSION["employeeuid"])) {
+                    echo '
+                        <button class="sideBut" onclick="navigateToDashboard()">
+                            <span>Dashboard</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToProfile()">
+                            <span>Profile</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToLogout()">
+                            <span>Logout</span>
+                        </button>
+                    ';
+                } else {
+                    echo '
+                        <button class="sideBut" onclick="navigateToSignUp()">
+                            <span>Sign Up</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="sideBut" onclick="navigateToLogin()">
+                            <span>Login</span>
+                        </button>
+                    ';
+                }
+            ?>
         </div>
-    </nav>
+        <header>
+        <div class="buttons">
 
-<div class="wrapper">
+        <?php
+                if (isset($_SESSION["useruid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToCreateEmployee()">
+                            <span>Create Employee Account</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToEmployeeTimesheet()">
+                            <span>Employee Timesheet</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToAnnouncement()">
+                            <span>Create Announcements</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToViewAnnouncement()">
+                            <span>View Announcements</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToPayPeriod()">
+                            <span>Pay Period</span>
+                        </button>
+                    ';
+
+                } elseif (isset($_SESSION["employeeuid"])) {
+                    echo '
+                        <button class="main" onclick="navigateToTimePunch()">
+                            <span>Time Punch</span>
+                         </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToTimeSheet()">
+                            <span>Time Sheet</span>
+                         </button>
+                    ';
+                } else {
+                    // header("location: ../index.php");
+                }
+            ?>
+        
+            
+
+
+
+            
+            
+            <button class="main" onclick="navigateToHome()">
+                <span>Home</span>
+            </button>
+            
+        
+
+        
+
+    </header>
+        
+
+        <script src="app/js/script.js"></script>
+</body>
+</html>
+

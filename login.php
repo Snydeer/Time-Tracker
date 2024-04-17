@@ -3,21 +3,28 @@
 ?>
 
     <section class="signup-form">
-        <h2>Log In for Company Manager</h2>
+        <h1>Log In for Company Manager</h1>
+        <div class = "login-container">
         <form action="includes/login.inc.php" method="post">
-            <input type="text" name="uid" placeholder="Username/Email...">
-            <input type="password" name="pwd" placeholder="Password...">
-            <button type="submit" name="submit">Log In</button>
+            <input class ="login" input type="text" name="uid" placeholder="Username...">
+            <input class ="login" input type="password" name="pwd" placeholder="Password...">
+            <button class ="login" button type="submit" name="submit">Log In</button>
         </form>
+        </div>
+        <div class = "error-login">
         <?php
         if(isset($_GET["error"])) {
              if ($_GET["error"] == "emptyinput") {
-                 echo "<p>Fill in all fields!</p>";
+                echo "<p class='error-message'>Fill in all fields!</p>";
              } else if ($_GET["error"] == "wronglogin") {
-                 echo "<p>Incorrect Login Information!</p>";
+                echo "<p class='error-message'>Incorrect Login Information!</p>";
+             } else if ($_GET["error"] == "usernotfound") {
+                echo "<p class='error-message'>Cannot find user!</p>";
              } 
             } 
         ?> 
+        
+        </div>
      </section>
 
 <?php

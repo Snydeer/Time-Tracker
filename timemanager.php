@@ -1,13 +1,10 @@
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
 ?>
 
 <?php
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -45,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["select_employee"])) {
     
     <!-- Employee Selection Form -->
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <div class="center-container">
     <label for="employee_id">Select an Employee:</label>
     <select name="employee_id" id="employee_id">
         <?php foreach ($employees as $employee) : ?>
@@ -52,11 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["select_employee"])) {
         <?php endforeach; ?>
     </select>
     <button type="submit" name="select_employee">View Time Tracking</button>
+        </div>
     </form>
 
     <!-- Display Time Tracking Records -->
     <?php if (isset($time_tracks)) : ?>
     <h2>Time Tracking Records for <?php echo $selected_employee_id; ?></h2>
+    <div class="timesheet-box">
     <table>
         <thead>
             <tr>
@@ -75,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["select_employee"])) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
 <?php endif; ?>
 
 <?php

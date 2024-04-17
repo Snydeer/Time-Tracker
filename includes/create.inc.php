@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
 
     $create->createUser();
 
-    header("location: ../index.php?error=none");
+    header("location: ../dashboard.php?error=none");
 
 }
 

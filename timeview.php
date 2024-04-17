@@ -1,12 +1,10 @@
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
 ?>
 
 <?php
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -29,11 +27,18 @@ function formatElapsedTime($seconds) {
 }
 
 if (!isset($_SESSION['employeeuid'])) {
-    header("Location: login.php");
+    header("Location: loginpicker.php");
     exit();
 }
 
 $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
+?>
+
+<?php
+function calculateHours($elapsed_time) {
+    $hours = floor($elapsed_time / 3600);
+    return $hours;
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,26 +49,33 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
     <title>View Time Tracks</title>
 </head>
 <body>
-    <h1>View Time History</h1>
-    <p>Welcome, <?php echo $_SESSION['employeename']; ?>!</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Elapsed Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($timeTracks as $track) : ?>
+<h1>Timesheet</h1>
+    <div class="timesheet-box">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo date('F j, Y H:i:s', strtotime($track['start_time'])); ?></td>
-                    <td><?php echo date('F j, Y H:i:s', strtotime($track['end_time'])); ?></td>
-                    <td><?php echo formatElapsedTime($track['elapsed_time']); ?></td>
+                    <th>Date</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Elapsed Time</th>
+                    <th>Hours</th> <!-- New column for hours -->
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <!-- Timesheet entries from database -->
+                <?php foreach ($timeTracks as $track) : ?>
+                    <tr>
+                        <td><?php echo date('Y-m-d', strtotime($track['start_time'])); ?></td>
+                        <td><?php echo date('g:i A', strtotime($track['start_time'])); ?></td>
+                        <td><?php echo date('g:i A', strtotime($track['end_time'])); ?></td>
+                        <td><?php echo formatElapsedTime($track['elapsed_time']); ?></td>
+                        <td><?php echo calculateHours($track['elapsed_time']); ?></td> <!-- Call function to calculate hours -->
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <script src="app/js/script.js"></script>
 </body>
 </html>
 
