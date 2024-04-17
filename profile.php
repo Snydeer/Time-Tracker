@@ -25,7 +25,7 @@
                     ';
                     echo '
                         <button class="main" onclick="navigateToChangePay()">
-                            <span>View Employee Pay</span>
+                            <span>Update Employee Pay</span>
                         </button>
                     ';
                     echo '
@@ -39,13 +39,7 @@
                             <span>Change Password</span>
                          </button>
                     ';
-                    echo '
-
-                        <button class="main" onclick="navigateToEmployeePay()">
-                            <span> Employee Pay</span>
-                        </button>
-
-                        <button class="main" onclick="navigateToTimeSheet()">
+                    echo'    <button class="main" onclick="navigateToEmployeePay()">
 
                             <span>Payroll</span>
                          </button>

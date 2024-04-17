@@ -1,6 +1,6 @@
-<?php
-    session_start();
-   include_once 'connection.php';
+<?php 
+    include_once 'header.php';
+    include_once 'connection.php';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -18,14 +18,14 @@ if (isset($_SESSION['useruid']) && isset($_SESSION['company'])) {
     $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-    <div style="text-align: center;">
-    <form action="update_pay.php" method="post">
-    <link rel="stylesheet" href="app/css/pay.css">
 
-        <table>
+<div style="text-align: center;">
+    <form action="update_pay.php" method="post" style="display: inline-block; text-align: left;">
+
+        <table style="margin: 0 auto;">
             <tr>
-                <th>Employee Name</th>
-                <th>Pay Amount</th>
+                <th style="padding: 10px; font-size: 18px;">Employee Name</th>
+                <th style="padding: 10px; font-size: 18px;">Pay Amount</th>
             </tr>
             <?php foreach ($employees as $employee): ?>
                 <tr>
@@ -39,7 +39,7 @@ if (isset($_SESSION['useruid']) && isset($_SESSION['company'])) {
         </table>
         <button type="submit" name="submit">Update Pay</button>
     </form>
-    </div>
+</div>
 
 <?php
 } else {

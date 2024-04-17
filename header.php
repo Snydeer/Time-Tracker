@@ -113,24 +113,16 @@
                             <span>Time Sheet</span>
                          </button>
                     ';
+                    echo '
+                        <button class="main" onclick="navigateToViewAnnouncement()">
+                            <span>View Announcements</span>
+                        </button>
+                    ';
                 } else {
                     // header("location: ../index.php");
                 }
             ?>
-        
             
-
-
-
-            
-            
-            <button class="main" onclick="navigateToHome()">
-                <span>Home</span>
-            </button>
-            
-        
-
-        
 
     </header>
         

@@ -9,9 +9,6 @@
         <p> User Profile:</p>
         <p>Company: <?php echo $_SESSION['company']; ?></p>
         <p><?php echo $_SESSION['company']; ?></p>
-        <div>
-            <button type="submit" name="redirect">View Time Tracking</button>
-        </div>
         
         
 

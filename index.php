@@ -20,7 +20,14 @@
            <button class ="darkmode"></button>
            <a href = ""><button class ="txt-bttn header-text">about</button></a>
            <a href = "dashboard.php"><button class = "txt-bttn header-text">dashboard</button></a>
-           <a href = "loginpicker.php"><button class ="login-bttn">log-in</button></a>
+            <?php
+
+            if (isset($_SESSION['useruid']) || isset($_SESSION['employeeuid'])) {
+                echo '<a href="includes/logout.inc.php"><button class="login-bttn">log-out</button></a>';
+            } else {
+                echo '<a href="loginpicker.php"><button class="login-bttn">log-in</button></a>';
+            }
+            ?>
             <!--<h1 class = "line"></h1>-->
         </div>
 

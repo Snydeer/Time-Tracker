@@ -467,7 +467,7 @@ h2 {
 .center-container label,
 .center-container select,
 .center-container button {
-  margin: 0 10px; /* Adjust margin as needed */
+  margin: 0 10px; 
 }
 
 a{
@@ -476,4 +476,50 @@ color: var(--link);
 
 a:hover{
 color: var(--hover);
+}
+
+.form-payroll-employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-payroll-employee label {
+  margin-bottom: 8px;
+}
+
+.form-payroll-employee input,
+.form-payroll-employee button {
+  margin-bottom: 16px;
+}
+
+.changepassword body {
+  text-align: center; 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; 
+}
+
+.changepassword form {
+  display: inline-block; 
+  text-align: left; 
+}
+
+.changepassword p.error-message {
+  color: red;
+  margin-top: 10px; 
+}
+
+.payroll-form-manager {
+  text-align: center;
+}
+
+.payroll-form-manager-title {
+  margin-bottom: 20px;
+}
+
+.payroll-form-container {
+  display: inline-block;
+  text-align: left;
 }
