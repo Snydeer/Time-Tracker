@@ -524,7 +524,6 @@ color: var(--hover);
 .payroll-form-container {
   display: inline-block;
   text-align: left;
-
 }
 
 table {
@@ -538,5 +537,4 @@ th, td {
 }
 th {
   background-color: #f2f2f2;
-
 }

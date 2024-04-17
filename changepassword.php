@@ -1,6 +1,6 @@
 <?php
-    include_once 'header.php';
-    include_once 'connection.php';
+include_once 'header.php';
+include_once 'connection.php';
 ?>
 
 <?php
@@ -57,11 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["employeeuid"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Password</title>  
+    <title>Change Password</title>
 </head>
+
 <body class="changepassword">
     <h1>Change Password</h1>
     <?php if (isset($error)) : ?>
@@ -75,16 +77,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["employeeuid"])) {
         <input type="submit" value="Change Password">
     </form>
     <?php
-        if(isset($_GET["error"])) {
-             if ($_GET["error"] == "none") {
-                 echo "<p>You have changed your password!</p>";
-             }
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "none") {
+            echo "<p>You have changed your password!</p>";
         }
+    }
     ?>
 </body>
+
 </html>
 
 
 <?php
-    include_once 'footer.php';
+include_once 'footer.php';
 ?>

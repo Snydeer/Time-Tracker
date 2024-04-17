@@ -1,8 +1,10 @@
 <?php
 
-class LoginEmployee extends Dbh {
+class LoginEmployee extends Dbh
+{
 
-    protected function getUser($uid, $pwd) {
+    protected function getUser($uid, $pwd)
+    {
         $stmt = $this->connect()->prepare('SELECT employees_pwd FROM employee WHERE employees_uid = ? OR employees_email = ?;');
 
         if (!$stmt->execute(array($uid, $pwd))) {
@@ -11,7 +13,7 @@ class LoginEmployee extends Dbh {
             exit();
         }
 
-        if($stmt->rowCount() == 0) {
+        if ($stmt->rowCount() == 0) {
             $stmt = null;
             header("location: ../loginemployee.php?error=usernotfound1");
             exit();
@@ -20,11 +22,11 @@ class LoginEmployee extends Dbh {
         $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $checkPwd = password_verify($pwd, $pwdHashed[0]["employees_pwd"]);
 
-        if($checkPwd == false) {
+        if ($checkPwd == false) {
             $stmt = null;
             header("location: ../loginemployee.php?error=usernotfound");
             exit();
-        } elseif($checkPwd == true) {
+        } elseif ($checkPwd == true) {
             $stmt = $this->connect()->prepare('SELECT * FROM employee WHERE employees_uid = ? OR employees_email = ? AND employees_pwd = ?;');
 
             if (!$stmt->execute(array($uid, $uid, $pwd))) {
@@ -33,7 +35,7 @@ class LoginEmployee extends Dbh {
                 exit();
             }
 
-            if($stmt->rowCount() == 0) {
+            if ($stmt->rowCount() == 0) {
                 $stmt = null;
                 header("location: ../loginemployee.php?error=usernotfound2");
                 exit();
@@ -49,10 +51,5 @@ class LoginEmployee extends Dbh {
 
             $stmt = null;
         }
-
-        
     }
-
-    
-
 }

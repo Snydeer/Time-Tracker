@@ -2,7 +2,6 @@ function navigateToLogin() {
     window.location.href = "loginpicker.php";
 }
 
-
 function navigateToViewEmployees() {
     window.location.href = "viewallemployees.php";
 }

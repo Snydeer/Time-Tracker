@@ -1,4 +1,3 @@
-
 <?php
 include_once 'header.php';
 include_once 'connection.php';
@@ -61,11 +60,11 @@ $dbh = null;
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label for="employees_uid">Select Employee:</label>
             <select id="employees_uid" name="employees_uid">
-                <?php foreach ($employees as $employee): ?>
+                <?php foreach ($employees as $employee) : ?>
                     <option value="<?= $employee['employees_uid'] ?>"><?= $employee['employees_name'] ?></option>
                 <?php endforeach; ?>
             </select>
-            
+
             <label for="start_date">Start Date:</label>
             <input type="date" id="start_date" name="start_date">
 
