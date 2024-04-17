@@ -39,5 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm'])) {
 }
 
 include_once 'footer.php';
-
 ?>

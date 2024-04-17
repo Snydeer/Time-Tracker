@@ -44,8 +44,8 @@ if (isset($_SESSION["useruid"])) {
                             <span>Change Password</span>
                          </button>
                     ';
-        echo '    <button class="main" onclick="navigateToEmployeePay()">
 
+        echo '    <button class="main" onclick="navigateToEmployeePay()">;
                             <span>Payroll</span>
                          </button>
                     ';

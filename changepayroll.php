@@ -48,4 +48,6 @@ if (isset($_SESSION['useruid']) && isset($_SESSION['company'])) {
 }
 
 $dbh = null;
+
 ?>
+

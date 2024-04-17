@@ -9,7 +9,7 @@
     --hover2: #1A858C;
 }
 
-.light{
+:root{
     --text1: #1D1B1B;
     --text2: #FFFFFF;
     --bkg: #FFFFFF;

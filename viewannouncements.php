@@ -41,9 +41,7 @@ include_once 'connection.php';
         die("Error: Could not connect. " . $e->getMessage());
     }
 
-    include_once 'footer.php';
-    ?>
 
-</body>
+include_once 'footer.php';
+?>
 
-</html>

@@ -2,22 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 
-:root{
-  --link: rgb(4, 0, 128);
-  --hover: purple;
-}
-
-.light{
-  --text1: #1D1B1B;
-  --text2: #FFFFFF;
-  --bkg: #D9D9D9;
-  --bkg2: #D9D9D9;
-  --main: #1A858C;
-  --secondary: #366586;
-  --hover1: #14686e93;
-  --hover2: #1A858C;
-  --buttonFont: 'Roboto';
-}
 
 body {
   background-color: var(--bkg);
@@ -32,6 +16,32 @@ body {
 header{
   background: var(--main);
   height: 4.5em;
+
+  padding: 2rem;
+}
+
+:root{
+   --link: rgb(4, 0, 128);
+  --hover: purple;
+  --text1: #1D1B1B;
+  --text2: #FFFFFF;
+  --bkg: #FFFFFF;
+  --bkg2: #D9D9D9;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
+}
+.dark{
+  --text1: #FFFFFF;
+  --text2: #FFFFFF;
+  --bkg: #1D1B1B;
+  --bkg2: #545353;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
+
 }
 
 .confirm-container {
@@ -78,12 +88,14 @@ li {
 
 .buttons {
   display: grid;
-  width: min(60rem, 100%);
+  width: min(75rem, 100%);
   margin-inline: auto;
+
   grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
   gap: .5rem;
   margin-top: 5px;
   /* padding-left: 30px; */
+
 }
 
 .clockButtons {
@@ -103,25 +115,28 @@ li {
 button.main, .sideBut {
   /* Top nav buttons*/
   container-type: inline-size;
+
   border: 0.5rem solid transparent;
   border-radius: 1rem;
   color: hsl(0, 0%, 0%);
   background: hsl(190, 32%, 38%);
+
   display: grid;
   place-content: center;
-  /* gap: 10%; */
+  gap: 1rem;
   --shadow:
     -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
-  /* box-shadow: var(--shadow); */
+  box-shadow: var(--shadow);
   outline: none;
+
   transition: all 0.15s;
   margin-left: -10px;
   width: 150px;
   height:50px;
   margin-top: 10px;
-}
 
+}
 
 button.choose {
   container-type: inline-size;
@@ -192,8 +207,8 @@ button.main > span, button.main.active > span {
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 20px auto;
-  width: 50%;
-  height: 14%;
+  width: 120px;
+  height: 120px;
   white-space: nowrap;
 }
 
@@ -212,7 +227,7 @@ button.main > span, button.main.active > span {
 
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -226,8 +241,8 @@ button.main > span, button.main.active > span {
   border: 2px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  width: 50%;
-  height: 15%;
+  width: 210px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -496,17 +511,23 @@ color: var(--hover);
   margin-bottom: 16px;
 }
 
+
 .changepassword body {
   text-align: center; 
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif; 
+
+/* .dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .changepassword form {
   display: inline-block; 
   text-align: left; 
 }
+
 
 .changepassword p.error-message {
   color: red;
@@ -538,3 +559,15 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+/* Additional styles for dark mode 
+.dark-mode .header {
+  background-color: #111;
+  color: #fff;
+}
+
+.dark-mode .footer {
+  background-color: #111;
+  color: #fff;
+} */
+

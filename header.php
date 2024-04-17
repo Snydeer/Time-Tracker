@@ -14,9 +14,7 @@ session_start();
     <link rel="stylesheet" href="app/css/style.css">
 </head>
 
-<body class="light">
-
-
+<body onload="onload()">
     <div class="sidenav">
         <div class="image-container">
             <img src="BigLogoV1.png" alt="Logo">
@@ -70,6 +68,7 @@ session_start();
                             <span>Login</span>
                         </button>
                     ';
+
         }
         ?>
     </div>
@@ -130,5 +129,19 @@ session_start();
 
     <script src="app/js/script.js"></script>
 </body>
+
+                }
+
+                echo '
+                <button id ="darkmode" class="sideBut" onclick = "darkmode()">dark mode</button>
+            ';
+            ?>
+        </div>
+        
+
+        <script src="app/js/script.js"></script>
+<!--</body>
+</html>-->
+
 
 </html>
