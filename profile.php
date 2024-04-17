@@ -31,6 +31,7 @@
                     echo '
                         <button class="main" onclick="navigateToViewEmployees()">
                             <span>View Employees</span>
+
                         </button>
                     ';
                     echo '
