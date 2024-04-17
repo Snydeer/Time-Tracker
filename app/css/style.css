@@ -1,18 +1,28 @@
 @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
 body {
-  background-color: #e5e9f4;
+  background-color: var(--bkg);
   padding: 2rem;
-  margin-top: -5px;
-  margin-left: 15%;
-  margin-right: 0px;
 }
-#nav-divider{
-  position:fixed;
-  width: 100%;
-}
-header{
-  background: #777777;
 
+:root{
+  --text1: #1D1B1B;
+  --text2: #FFFFFF;
+  --bkg: #FFFFFF;
+  --bkg2: #D9D9D9;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
+}
+.dark{
+  --text1: #FFFFFF;
+  --text2: #FFFFFF;
+  --bkg: #1D1B1B;
+  --bkg2: #545353;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
 }
 
 .confirm-container {
@@ -59,12 +69,11 @@ li {
 
 .buttons {
   display: grid;
-  width: min(60rem, 100%);
+  width: min(75rem, 100%);
   margin-inline: auto;
   grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
   gap: 2rem;
   margin-top: 200px;
-
 }
 
 .clockButtons {
@@ -83,29 +92,6 @@ li {
 
 button.main, .sideBut {
   container-type: inline-size;
-
-  border: 0.5rem solid transparent;
-  border-radius: 0rem;
-  color: hsl(0, 0%, 10%);
-  background: hsl(211, 71%, 84%);
-  display: grid;
-  place-content: center;
-  /* gap: 10%; */
-  --shadow:
-    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
-    .5rem .5rem 1rem hsl(0 0% 50% / .5);
-  /* box-shadow: var(--shadow); */
-  outline: none;
-  transition: all 0.15s;
-  margin-left: -10px;
-  width: 100%;
-  height:100%
-}
-
-
-button.choose {
-  container-type: inline-size;
-
   aspect-ratio: 1/1;
   border: 0.5rem solid transparent;
   border-radius: 1rem;
@@ -122,9 +108,23 @@ button.choose {
   transition: all 0.1s;
 }
 
-
-
-
+button.choose {
+  container-type: inline-size;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0, 0%, 10%);
+  background: none;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+}
 
 button.choose:hover, button.choose:focus-visible {
   color: hsl(10, 80%, 50%);
@@ -161,7 +161,7 @@ button.main > i, button.main.active > i {
 
 button.main > span, button.main.active > span {
   font-family: system-ui, sans-serif;
-  /* font-size: 100%; */
+  font-size: 16cqi;
 }
 
 .sideBut {
@@ -175,8 +175,8 @@ button.main > span, button.main.active > span {
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 20px auto;
-  width: 50%;
-  height: 14%;
+  width: 120px;
+  height: 120px;
   white-space: nowrap;
 }
 
@@ -194,7 +194,7 @@ button.main > span, button.main.active > span {
 
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -208,8 +208,8 @@ button.main > span, button.main.active > span {
   border: 2px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  width: 50%;
-  height: 15%;
+  width: 210px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -467,7 +467,7 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-.dark-mode {
+/* .dark-mode {
   background-color: #1a1a1a;
   color: #ffffff;
 }
@@ -477,18 +477,13 @@ body.dark-mode {
   color: #fff;
 }   
 
-/* Additional styles for dark mode */
+/* Additional styles for dark mode 
 .dark-mode .header {
   background-color: #111;
   color: #fff;
 }
 
-
 .dark-mode .footer {
   background-color: #111;
   color: #fff;
-}
-a:hover{
-color: var(--hover);
-}
-
+} */

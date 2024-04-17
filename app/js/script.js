@@ -86,32 +86,51 @@ function returnBut() {
     window.location.href = "/main.html";
 }
 
-
 //Dark Mode Functions
 
-let button = document.getElementById("darkmode");
-let body = document.getElementById('body')
+// let body = document.body; // Get the body element directly
 
-function toggleDarkMode(){
-    body.classList.toggle('dark');
-    body.classList.toggle('light');
+// function toggleDarkMode() {
+//     console.log("Dark mode button clicked!"); // Add this line
+//     body.classList.toggle('dark');
+//     body.classList.toggle('light');
 
-        // Store the current state in localStorage
-        let isDarkMode = body.classList.contains('dark');
-        localStorage.setItem('dark', isDarkMode);
+//     // Store the current state in localStorage
+//     let isDarkMode = body.classList.contains('dark');
+//     localStorage.setItem('dark', isDarkMode);
+// }
+
+// // Check localStorage for the dark mode preference when the page loads
+// window.onload = function() {
+//     let isDarkMode = localStorage.getItem('dark') === 'true';
+
+//     // Set the body class based on the stored preference
+//     if (isDarkMode) {
+//         body.classList.add('dark');
+//     } else {
+//         body.classList.add('light');
+//     }
+// };
+
+function darkmode() {
+    const wasDarkmode = localStorage.getItem('darkmode') === 'true';
+    localStorage.setItem('darkmode', !wasDarkmode);
+    const element = document.body;
+    element.classList.toggle('dark', !wasDarkmode);
 }
 
-button.addEventListener('click', toggleDarkmode);
+// function onload() {
+//     document.body.classList.toggle('dark', localStorage.getItem('darkmode') === 'true');
+// }
 
-// Check localStorage for the dark mode preference when the page loads
+// function applyDarkMode() {
+//     const wasDarkmode = localStorage.getItem('darkmode') === 'true';
+//     const element = document.body;
+//     element.classList.toggle('dark', wasDarkmode);
+// }
+
+// Call applyDarkMode() when the page loads
 window.onload = function() {
-    let isDarkMode = localStorage.getItem('dark') === 'true';
-
-    // Set the body class based on the stored preference
-    if (isDarkMode) {
-        body.classList.add('dark');
-    } else {
-        body.classList.add('light');
-    }
+    darkmode();
 };
 

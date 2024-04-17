@@ -1,4 +1,3 @@
-
 <?php
     include_once 'header.php';
     include_once 'connection.php';
@@ -40,5 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm'])) {
 }
 
 include_once 'footer.php';
-
 ?>
