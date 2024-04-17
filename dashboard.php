@@ -39,6 +39,8 @@ if (isset($_SESSION["useruid"])) {
     $recent_announcement = $stmt_announcement->fetchColumn();
 
     $dashboard_title = "Employee Dashboard";
+} else {
+    header("location:index.php");
 }
 //var_dump($total_hours_past_7_days); testing for null
 
