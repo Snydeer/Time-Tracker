@@ -25,7 +25,12 @@
                     ';
                     echo '
                         <button class="main" onclick="navigateToChangePay()">
-                            <span>View Employee Pay</span>
+                            <span>Update Employee Pay</span>
+                        </button>
+                    ';
+                    echo '
+                        <button class="main" onclick="navigateToViewEmployees()">
+                            <span>View Employees</span>
                         </button>
                     ';
                     echo '
@@ -33,14 +38,16 @@
                             <span>Settings</span>
                         </button>
                     ';
+
+                    
                 } elseif (isset($_SESSION["employeeuid"])) {
                     echo '
                         <button class="main" onclick="navigateToPwChange()">
                             <span>Change Password</span>
                          </button>
                     ';
-                    echo '
-                        <button class="main" onclick="navigateToEmployeePay()">
+                    echo'    <button class="main" onclick="navigateToEmployeePay()">
+
                             <span>Payroll</span>
                          </button>
                     ';

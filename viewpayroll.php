@@ -1,10 +1,9 @@
-<?php
-session_start();
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+<?php
+include_once 'header.php';
+include_once 'connection.php';
+
+
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -55,22 +54,28 @@ if (isset($_SESSION['useruid']) && isset($_SESSION['company'])) {
 $dbh = null;
 ?>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <label for="employees_uid">Select Employee:</label>
-    <select id="employees_uid" name="employees_uid">
-        <?php foreach ($employees as $employee): ?>
-            <option value="<?= $employee['employees_uid'] ?>"><?= $employee['employees_name'] ?></option>
-        <?php endforeach; ?>
-    </select>
-    
-    <label for="start_date">Start Date:</label>
-    <input type="date" id="start_date" name="start_date">
+<div class="payroll-form-manager">
+    <h1 class="payroll-form-manager-title">Employee's Payroll</h1>
 
-    <label for="end_date">End Date:</label>
-    <input type="date" id="end_date" name="end_date">
+    <div class="payroll-form-container">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="employees_uid">Select Employee:</label>
+            <select id="employees_uid" name="employees_uid">
+                <?php foreach ($employees as $employee): ?>
+                    <option value="<?= $employee['employees_uid'] ?>"><?= $employee['employees_name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+            
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date">
 
-    <button type="submit" name="submit">View Pay</button>
-</form>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date">
+
+            <button type="submit" name="submit">View Pay</button>
+        </form>
+    </div>
+</div>
 
 <?php
 include_once 'footer.php';

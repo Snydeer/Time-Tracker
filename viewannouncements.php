@@ -1,11 +1,19 @@
+
 <?php
 include_once 'header.php';
+include_once 'connection.php';
+?>
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+</head>
+<body>
 
+<?php
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -34,3 +42,6 @@ try {
 
 include_once 'footer.php';
 ?>
+
+</body>
+</html>

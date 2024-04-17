@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
     date_default_timezone_set('America/New_York');
 ?>
 
@@ -18,10 +19,6 @@ $display = true;
 
 //connection to sql
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

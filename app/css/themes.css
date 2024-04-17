@@ -1,0 +1,21 @@
+.dark{
+    --text1: #FFFFFF;
+    --text2: #FFFFFF;
+    --bkg: #1D1B1B;
+    --bkg2: #545353;
+    --main: #1A858C;
+    --secondary: #366586;
+    --hover1: #1A858C;
+    --hover2: #1A858C;
+}
+
+.light{
+    --text1: #1D1B1B;
+    --text2: #FFFFFF;
+    --bkg: #FFFFFF;
+    --bkg2: #D9D9D9;
+    --main: #1A858C;
+    --secondary: #366586;
+    --hover1: #1A858C;
+    --hover2: #1A858C;
+}

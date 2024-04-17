@@ -1,13 +1,10 @@
 <?php
-    session_start();
+    include_once 'connection.php';
+    include_once 'header.php';
 ?>
 
 <?php
 
-$host = 'localhost';
-$dbname = 'OOPSWE';
-$username = 'root';
-$password = '';
 
 try {
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -48,14 +45,17 @@ $dbh = null;
 ?>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <label for="start_date">Start Date:</label>
-    <input type="date" id="start_date" name="start_date">
+    <div class="form-payroll-employee">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date">
 
-    <label for="end_date">End Date:</label>
-    <input type="date" id="end_date" name="end_date">
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date">
 
-    <button type="submit" name="submit">View Pay</button>
+        <button type="submit" name="submit">View Pay</button>
+    </div>
 </form>
+
 
 <?php
     include_once 'footer.php';

@@ -1,5 +1,7 @@
+
 <?php
     include_once 'header.php';
+    include_once 'connection.php';
     date_default_timezone_set('America/New_York');
 ?>
 
@@ -19,10 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm'])) {
     $expiration_date = $_POST["expiration_date"];
     $current_date = date("Y-m-d");
 
-    $host = 'localhost';
-    $dbname = 'OOPSWE';
-    $username = 'root';
-    $password = '';
 
     try {
         $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -42,4 +40,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm'])) {
 }
 
 include_once 'footer.php';
+
 ?>

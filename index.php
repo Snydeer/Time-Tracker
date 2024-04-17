@@ -9,18 +9,26 @@
     <link rel = "stylesheet" href = "app/css/home.css">
 </head>
 
-<body>
+<body class ="light">
     <header class = "remove-margin flex-container" id = "nav-divider">
         <!--have the logo be all the way to the side -->
-        <div id = "logo" class = "left">
-            <h1 id = "logo-txt">AC</h1>
+        <div class="image-container">
+            <img src="BigLogoV1.png" alt="Logo" width="100em">
         </div>
         <!-- use flex for buttons on the side -->
         <div id = "nav-bttn" class = "flex-container right">
-           <a href = ""><button class ="txt-bttn">about</button></a>
-           <a href = "dashboard.php"><button class = "txt-bttn">dashboard</button></a>
-           <a href = "loginpicker.php"><button class ="login-bttn">log-in</button></a>
-            <h1 class = "line"></h1>
+           <button class ="darkmode"></button>
+           <a href = ""><button class ="txt-bttn header-text">about</button></a>
+           <a href = "dashboard.php"><button class = "txt-bttn header-text">dashboard</button></a>
+            <?php
+
+            if (isset($_SESSION['useruid']) || isset($_SESSION['employeeuid'])) {
+                echo '<a href="includes/logout.inc.php"><button class="login-bttn">log-out</button></a>';
+            } else {
+                echo '<a href="loginpicker.php"><button class="login-bttn">log-in</button></a>';
+            }
+            ?>
+            <!--<h1 class = "line"></h1>-->
         </div>
 
     </header>
@@ -30,11 +38,9 @@
         <div id = "about" >
             <div class ="flex-container">
                 <div class = "left">
-                    <h1>Agile Company
-                        Time Tracker
-                    </h1>
-                    <h2>This is a site that does cool things</h2>
-                    <h3>Includes Features</h3>
+                    <h1 class = "title">Agile Company Time Tracker</h1>
+                    <h2 class = "sub">This is a site that does cool things</h2>
+                    <h3 class = "sub2">Includes Features</h3>
                     <h3>
                         <ul>
                             <li>schedule</li>
@@ -45,7 +51,7 @@
                     </h3>
                 </div>
                 <div class = "right">
-                    <h1>This will be filled with different things</h1>
+                    <img id  = "main-image" src = "resources/actt.png" ></img>
                 </div>
             </div>
            
