@@ -1,8 +1,10 @@
 <?php
 
-class Signup extends Dbh {
+class Signup extends Dbh
+{
 
-    protected function setUser($name, $email, $uid, $pwd, $companyname) {
+    protected function setUser($name, $email, $uid, $pwd, $companyname)
+    {
         $stmt = $this->connect()->prepare('INSERT INTO users (users_name, users_email, users_uid, users_pwd, users_company) VALUES (?, ?, ?, ?, ?);');
 
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -16,7 +18,8 @@ class Signup extends Dbh {
         $stmt = null;
     }
 
-    protected function checkUser($uid, $email) {
+    protected function checkUser($uid, $email)
+    {
         $stmt = $this->connect()->prepare('SELECT users_uid FROM users WHERE users_uid = ? or users_email = ?;');
 
         if (!$stmt->execute(array($uid, $email))) {
@@ -26,7 +29,7 @@ class Signup extends Dbh {
         }
 
         $resultCheck = false;
-        if($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() > 0) {
             $resultCheck = false;
         } else {
             $resultCheck = true;
@@ -34,6 +37,4 @@ class Signup extends Dbh {
 
         return $resultCheck;
     }
-
-    
 }

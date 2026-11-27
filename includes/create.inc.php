@@ -2,7 +2,7 @@
 
 
 if (isset($_POST["submit"])) {
-    
+
     $name = $_POST["name"];
     $email = $_POST["email"];
     $username = generateUsername($name);
@@ -18,16 +18,16 @@ if (isset($_POST["submit"])) {
     $create->createUser();
 
     header("location: ../dashboard.php?error=none");
-
 }
 
-function generateUsername($name) {
+function generateUsername($name)
+{
 
     $name = strtolower(str_replace(' ', '', $name));
-    
+
     $randomNumber = rand(1000, 9999);
-    
+
     $username = $name . $randomNumber;
-    
+
     return $username;
 }

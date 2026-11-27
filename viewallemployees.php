@@ -1,3 +1,4 @@
+
 <?php
 include_once 'header.php';
 include_once 'connection.php';
@@ -47,4 +48,5 @@ try {
 <?php
 $stmt->closeCursor();
 $dbh = null;
+
 ?>

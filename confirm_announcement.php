@@ -14,7 +14,7 @@ include_once 'header.php';
         echo "<p>Announcement Text: $announcement_text</p>";
         echo "<p>Expiration Date: $expiration_date</p>";
         echo "</div>";
-        echo "<div class='but-cont'>"; 
+        echo "<div class='but-cont'>";
         echo "<form method='post' action='processannouncement.php'>";
         echo "<input type='hidden' name='announcement_text' value='$announcement_text'>";
         echo "<input type='hidden' name='expiration_date' value='$expiration_date'>";
@@ -23,7 +23,7 @@ include_once 'header.php';
         echo "<form method='get' action='createannouncement.php'>";
         echo "<button type='submit'>Cancel</button>";
         echo "</form>";
-        echo "</div>"; 
+        echo "</div>";
     } else {
         header("Location: index.php");
         exit();
@@ -33,4 +33,6 @@ include_once 'header.php';
 
 <?php
 include_once 'footer.php';
+
 ?>
+

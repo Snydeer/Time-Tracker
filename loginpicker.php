@@ -1,24 +1,26 @@
 <?php
-    include_once 'header.php';
+include_once 'header.php';
 ?>
 
-        <html>
-    <body>
+<html>
+
+<body>
     <h1>Employee or Company Manager?</h1>
-        <div class="buttons">
+    <div class="buttons">
 
         <button class="choose" onclick="navigateToEmployeeLogin()">
-                <span>Employee</span>
+            <span>Employee</span>
         </button>
         <button class="choose" onclick="navigateToManagerLogin()">
-                <span>Manager</span>
+            <span>Manager</span>
         </button>
-            
-        
 
-         
-    </body>
+
+
+
+</body>
+
 </html>
 <?php
-    include_once 'footer.php';
+include_once 'footer.php';
 ?>

@@ -12,11 +12,13 @@ if (isset($_POST["clockin"])) {
     header("location: ../index.php?error=none");
 }
 
-function startTimeTracking() {
+function startTimeTracking()
+{
     $_SESSION['start_time'] = time();
 }
 
-function stopTimeTracking() {
+function stopTimeTracking()
+{
     if (isset($_SESSION['start_time'])) {
         $start_time = $_SESSION['start_time'];
         $end_time = time();

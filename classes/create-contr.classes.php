@@ -1,6 +1,7 @@
 <?php
 
-class CreateContr extends Create {
+class CreateContr extends Create
+{
 
     private $name;
     private $email;
@@ -8,7 +9,7 @@ class CreateContr extends Create {
     private $pwd;
     private $company;
 
-    public function __construct($name, $email, $username, $pwd, $company) 
+    public function __construct($name, $email, $username, $pwd, $company)
     {
         $this->name = $name;
         $this->email = $email;
@@ -17,8 +18,9 @@ class CreateContr extends Create {
         $this->company = $company;
     }
 
-    public function createUser() {
-        if($this->emptyInput() == false) {
+    public function createUser()
+    {
+        if ($this->emptyInput() == false) {
             header("location: ../create.php?error=emptyinput");
             exit();
         }
@@ -26,15 +28,14 @@ class CreateContr extends Create {
         $this->setEmployee($this->name, $this->email, $this->username, $this->pwd, $this->company);
     }
 
-    private function emptyInput() {
+    private function emptyInput()
+    {
         $result = false;
         if (empty($this->name) || empty($this->email)) {
             $result = false;
-        }
-        else {
+        } else {
             $result = true;
         }
         return $result;
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
-    include_once 'header.php';
-    include_once 'connection.php';
+include_once 'header.php';
+include_once 'connection.php';
 ?>
 
 <?php
@@ -13,13 +13,15 @@ try {
     die("Error: Could not connect. " . $e->getMessage());
 }
 
-function getTimeTracksForUser($dbh, $employeeuid) {
+function getTimeTracksForUser($dbh, $employeeuid)
+{
     $stmt = $dbh->prepare("SELECT * FROM time_tracking WHERE username = ?");
     $stmt->execute([$employeeuid]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function formatElapsedTime($seconds) {
+function formatElapsedTime($seconds)
+{
     $hours = floor($seconds / 3600);
     $minutes = floor(($seconds % 3600) / 60);
     $seconds = $seconds % 60;
@@ -35,7 +37,8 @@ $timeTracks = getTimeTracksForUser($dbh, $_SESSION['employeeuid']);
 ?>
 
 <?php
-function calculateHours($elapsed_time) {
+function calculateHours($elapsed_time)
+{
     $hours = floor($elapsed_time / 3600);
     return $hours;
 }
@@ -43,13 +46,15 @@ function calculateHours($elapsed_time) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Time Tracks</title>
 </head>
+
 <body>
-<h1>Timesheet</h1>
+    <h1>Timesheet</h1>
     <div class="timesheet-box">
         <table>
             <thead>
@@ -77,9 +82,10 @@ function calculateHours($elapsed_time) {
     </div>
     <script src="app/js/script.js"></script>
 </body>
+
 </html>
 
 
 <?php
-    include_once 'footer.php';
+include_once 'footer.php';
 ?>

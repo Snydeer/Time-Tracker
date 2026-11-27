@@ -1,6 +1,7 @@
 <?php
 
-class SignupContr extends Signup {
+class SignupContr extends Signup
+{
 
     private $name;
     private $email;
@@ -9,7 +10,7 @@ class SignupContr extends Signup {
     private $pwdrepeat;
     private $companyname;
 
-    public function __construct($name, $email, $uid, $pwd, $pwdrepeat, $companyname) 
+    public function __construct($name, $email, $uid, $pwd, $pwdrepeat, $companyname)
     {
         $this->name = $name;
         $this->email = $email;
@@ -19,24 +20,25 @@ class SignupContr extends Signup {
         $this->companyname = $companyname;
     }
 
-    public function signupUser() {
-        if($this->emptyInput() == false) {
+    public function signupUser()
+    {
+        if ($this->emptyInput() == false) {
             header("location: ../signup.php?error=emptyinput");
             exit();
         }
-        if($this->invalidUid() == false) {
+        if ($this->invalidUid() == false) {
             header("location: ../signup.php?error=invaliduid");
             exit();
         }
-        if($this->invalidEmail() == false) {
+        if ($this->invalidEmail() == false) {
             header("location: ../signup.php?error=invalidemail");
             exit();
         }
-        if($this->pwdMatch() == false) {
+        if ($this->pwdMatch() == false) {
             header("location: ../signup.php?error=passwordsdontmatch");
             exit();
         }
-        if($this->uidTakenCheck() == false) {
+        if ($this->uidTakenCheck() == false) {
             header("location: ../signup.php?error=usernametaken");
             exit();
         }
@@ -44,42 +46,41 @@ class SignupContr extends Signup {
         $this->setUser($this->name, $this->email, $this->uid, $this->pwd, $this->companyname);
     }
 
-    private function emptyInput() {
+    private function emptyInput()
+    {
         $result = false;
         if (empty($this->name) || empty($this->email) || empty($this->uid) || empty($this->pwd) || empty($this->pwdrepeat) || empty($this->companyname)) {
             $result = false;
-        }
-        else {
+        } else {
             $result = true;
         }
         return $result;
     }
 
-    private function invalidUid() {
+    private function invalidUid()
+    {
         $result = false;
         if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) {
             $result = false;
-        }
-        else {
+        } else {
             $result = true;
         }
         return $result;
     }
 
-    private function invalidEmail() {
+    private function invalidEmail()
+    {
         $result = false;
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $result = false;
-
-        }
-        else {
+        } else {
             $result = true;
-
         }
         return $result;
     }
 
-    private function pwdMatch() {
+    private function pwdMatch()
+    {
         $result = false;
         if ($this->pwd !== $this->pwdrepeat) {
             $result = false;
@@ -89,7 +90,8 @@ class SignupContr extends Signup {
         return $result;
     }
 
-    private function uidTakenCheck() {
+    private function uidTakenCheck()
+    {
         $result = false;
         if (!$this->checkUser($this->uid, $this->email)) {
             $result = false;
@@ -98,5 +100,4 @@ class SignupContr extends Signup {
         }
         return $result;
     }
-
 }
