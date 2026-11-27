@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Payroll · Time Tracker Demo</title>
+  <meta name="description" content="Demo of Agile Company Time Tracker, a PHP and MySQL Software Engineering class project.">
+  <link rel="icon" href="img/BigLogoV1.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <script src="js/theme.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-page="viewpayroll" data-layout="app" data-auth="manager">
+  <noscript><p class="noscript">This demo needs JavaScript turned on.</p></noscript>
+  <main>
+    <div class="payroll-form-manager">
+      <h1 class="payroll-form-manager-title">Employee's Payroll</h1>
+      <div class="payroll-form-container">
+        <form id="payroll-form" method="post" novalidate>
+          <label for="employees_uid">Select Employee:</label>
+          <select id="employees_uid" name="employees_uid"></select>
+          <label for="start_date">Start Date:</label>
+          <input type="date" id="start_date" name="start_date">
+          <label for="end_date">End Date:</label>
+          <input type="date" id="end_date" name="end_date">
+          <button type="submit">View Pay</button>
+        </form>
+      </div>
+    </div>
+    <div id="pay-report" role="status"></div>
+  </main>
+</body>
+</html>

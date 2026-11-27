@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+body {
+  background-color: var(--bkg);
+  margin-top: -5px;
+  margin-left: 15%;
+  margin-right: 0px;
+}
+#nav-divider{
+  position:fixed;
+  width: 100%;
+}
+header{
+  background: var(--main);
+  height: 4.5em;
+
+  padding: 2rem;
+}
+
+:root{
+   --link: rgb(4, 0, 128);
+  --hover: purple;
+  --text1: #1D1B1B;
+  --text2: #FFFFFF;
+  --bkg: #FFFFFF;
+  --bkg2: #D9D9D9;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
+}
+.dark{
+  --text1: #FFFFFF;
+  --text2: #FFFFFF;
+  --bkg: #1D1B1B;
+  --bkg2: #545353;
+  --main: #1A858C;
+  --secondary: #366586;
+  --hover1: #1A858C;
+  --hover2: #1A858C;
+
+}
+
+.confirm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.announcement {
+  margin-bottom: 20px;
+}
+
+.but-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; 
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+}
+p {
+  text-align: center;
+}
+
+li {
+  text-align: center;
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+}
+
+.buttons {
+  display: grid;
+  width: min(75rem, 100%);
+  margin-inline: auto;
+
+  grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+  gap: .5rem;
+  margin-top: 5px;
+  /* padding-left: 30px; */
+
+}
+
+.clockButtons {
+  display: grid;
+  width: min(75rem, 100%);
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+  gap: 2rem;
+  margin-top: 200px;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+button.main, .sideBut {
+  /* Top nav buttons*/
+  container-type: inline-size;
+
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0, 0%, 0%);
+  background: hsl(190, 32%, 38%);
+
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+
+  transition: all 0.15s;
+  margin-left: -10px;
+  width: 150px;
+  height:50px;
+  margin-top: 10px;
+
+}
+
+button.choose {
+  container-type: inline-size;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0, 0%, 10%);
+  background: none;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+}
+
+button.choose:hover, button.choose:focus-visible {
+  color: hsl(10, 80%, 50%);
+  scale: 1.1;
+}
+
+button.choose:active, button.choose.active {
+  box-shadow: var(--shadow), inset 0.5rem 0.5rem 1rem hsla(0, 0%, 50%, 0.5), inset -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75);
+  color: hsl(10, 80%, 50%);
+}
+
+button.choose > i, button.choose.active > i {
+  font-size: 31cqi;
+}
+
+button.choose > span, button.choose.active > span {
+  font-family: system-ui, sans-serif;
+  font-size: 16cqi;
+}
+
+button.main:hover, button.main:focus-visible, .sideBut:hover, .sideBut:focus {
+  color: hsl(10, 80%, 50%);
+  scale: 1.1;
+  background-color: var(--hover1);
+}
+
+button.main:active, button.main.active, .sideBut:active, .sideBut.active {
+  box-shadow: var(--shadow), inset 0.5rem 0.5rem 1rem hsla(0, 0%, 50%, 0.5), inset -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75);
+  color: hsl(10, 80%, 50%);
+}
+
+button.main > i, button.main.active > i {
+  font-size: 31cqi;
+}
+
+button.main > span, button.main.active > span {
+  font-family: var(--buttonFont);
+  font-size: 105%;
+}
+
+.sideBut {
+  /* side nav buttons */
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  background-color: #545353;
+  font-family: var(--buttonFont);
+  font-size: 1.4em;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  white-space: nowrap;
+}
+
+.sideBut:hover {
+  background-color: var(--hover1);
+  /* side nav button color */
+}
+
+.sideBut:focus {
+  outline: none;
+}
+
+.sideBut span {
+  display: block;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--main);
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+.image-container {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 210px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.buttons-container {
+  border-left: 2px solid #ccc;
+}
+
+.returnButton {
+  position: fixed;
+  top: 20px; /* Adjust the top distance */
+  left: 20px; /* Adjust the right distance */
+  padding: 10px;
+font-family: system-ui, sans-serif;
+  background-color: #007bff; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.returnButton:hover {
+  background-color: #0056b3; /* Example hover background color */
+}
+
+.timesheetbox {
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #8b8b8b;
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0, 0%, 10%);
+  background: none;
+  place-content: center;
+  gap: 1rem;
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+}
+.title {
+  text-align: center;
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+}
+
+.timeSheetBut {
+  padding: 15px 20px; /* Adjust padding to make the button bigger */
+  border-radius: 15px; /* Increase border-radius for rounded corners */
+  color: hsl(0, 0%, 100%);
+  background-color: #8b8b8b;
+  font-family: system-ui, sans-serif;
+  font-size: 20px; /* Increase font size */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  margin: 20px auto;
+}
+
+.timesheetbox .sideBut {
+  display: inline-block; /* Adjust display property */
+  margin: 0 5px; /* Adjust margin between buttons */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+/* new */
+
+button.random, .sideBut {
+  container-type: inline-size;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid transparent;
+  border-radius: 1.5rem; /* Increased border-radius to make the button bigger */
+  color: hsl(0, 0%, 10%);
+  background: hsl(190, 32%, 38%);
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  /* box-shadow: var(--shadow); */
+  outline: none;
+  transition: all 0.1s;
+}
+
+button.random:hover, button.random:focus-visible, .sideBut:hover, .sideBut:focus {
+  color: hsl(10, 80%, 50%);
+  scale: 1.1;
+}
+
+button.random:active, button.random.active, .sideBut:active, .sideBut.active {
+  box-shadow: var(--shadow), inset 0.5rem 0.5rem 1rem hsla(0, 0%, 50%, 0.5), inset -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75);
+  color: hsl(10, 80%, 50%);
+}
+
+button.random > i, button.random.active > i {
+  font-size: 31cqi;
+}
+
+button.random > span, button.random.active > span {
+  font-family: system-ui, sans-serif;
+  font-size: 20cqi; 
+}
+
+/* Apply styles to the form container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Set the height of the container to 100% of the viewport height */
+}
+
+/* Apply styles to the form elements */
+.login {
+  margin-bottom: 10px; /* Add some margin between form elements */
+  padding: 10px; /* Add padding to the input boxes and button */
+  width: 300px; /* Set the width of the input boxes and button */
+  height: 40px; /* Set the height of the input boxes and button */
+  font-size: 16px; /* Set the font size */
+}
+
+.login[type="submit"] {
+  /* If you want the button to have a different style from the input boxes */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error-login {
+  text-align: center;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 55vh; /* Set the height of the container to 100% of the viewport height */
+}
+
+/* Apply styles to the form elements */
+.signup {
+  display: block; /* Change display to block to stack elements vertically */
+  margin-bottom: 10px; /* Add some margin between form elements */
+  padding: 10px; /* Add padding to the input boxes and button */
+  width: 300px; /* Set the width of the input boxes and button */
+  height: 40px; /* Set the height of the input boxes and button */
+  font-size: 16px; /* Set the font size */
+}
+
+.signup[type="submit"] {
+  /* If you want the button to have a different style from the input boxes */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-signup {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px; 
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+}
+
+.timesheet-box table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.timesheet-box th, .timesheet-box td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.timesheet-box thead {
+  background-color: #f0f0f0;
+}
+
+.timesheet-box tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.timesheet-box tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-container label,
+.center-container select,
+.center-container button {
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+a{
+color: var(--link);
+}
+
+a:hover{
+color: var(--hover);
+}
+
+
+.form-payroll-employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-payroll-employee label {
+  margin-bottom: 8px;
+}
+
+.form-payroll-employee input,
+.form-payroll-employee button {
+  margin-bottom: 16px;
+}
+
+
+.changepassword body {
+  text-align: center; 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; 
+
+/* .dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.changepassword form {
+  display: inline-block; 
+  text-align: left; 
+}
+
+
+.changepassword p.error-message {
+  color: red;
+  margin-top: 10px; 
+}
+
+.payroll-form-manager {
+  text-align: center;
+}
+
+.payroll-form-manager-title {
+  margin-bottom: 20px;
+}
+
+.payroll-form-container {
+  display: inline-block;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+/* Additional styles for dark mode 
+.dark-mode .header {
+  background-color: #111;
+  color: #fff;
+}
+
+.dark-mode .footer {
+  background-color: #111;
+  color: #fff;
+} */
+

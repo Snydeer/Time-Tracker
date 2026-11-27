@@ -1,0 +1,475 @@
+/* Extra styles for the static demo. The original stylesheets (style.css and
+   home.css) are copied unchanged apart from removing an unused Font Awesome
+   import. Everything here is either new (demo bar, demo login box) or a small
+   fix for layout/dark mode issues in the original. */
+
+/* Pages that require a login stay hidden until the auth check has run. */
+body[data-auth]:not(.ready) {
+  visibility: hidden;
+}
+
+.noscript {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ---------- layout fixes ---------- */
+
+/* The side nav is 250px wide, but the original page margin was 15%, so the
+   nav covered the content on smaller screens. */
+body[data-layout="app"] {
+  margin-left: 250px;
+  margin-top: 0;
+  padding-bottom: 4rem;
+}
+
+body[data-layout="app"] header {
+  height: auto;
+  min-height: 4.5em;
+  padding: 1.25rem 2rem;
+}
+
+body[data-layout="app"] header .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+body[data-layout="app"] header button.main {
+  margin-left: 0;
+  margin-top: 0;
+  width: auto;
+  min-width: 150px;
+  padding: 0 1rem;
+}
+
+body[data-layout="app"] main {
+  padding: 1rem 2rem 2rem;
+}
+
+.sidenav {
+  padding-top: 30px;
+  padding-bottom: 4rem;
+}
+
+.sidenav .sideBut {
+  width: 120px;
+  height: 120px;
+}
+
+/* ---------- dashboard (was inline in dashboard.php) ---------- */
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1,
+.dashboard-container h2,
+.dashboard-container p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dashboard-container h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.dashboard-container h2 {
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+/* ---------- pages ---------- */
+
+.picker {
+  max-width: 32rem;
+  margin-top: 3rem;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.profile-buttons button.main {
+  margin: 0;
+  width: auto;
+  min-width: 170px;
+  padding: 0 1rem;
+}
+
+.timesheet-box table {
+  width: min(100%, 760px);
+}
+
+.timesheet-box {
+  overflow-x: auto;
+}
+
+.signup-container.short {
+  height: auto;
+  padding: 1.5rem 0;
+}
+
+.new-container {
+  height: auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.new-container textarea {
+  max-width: 100%;
+}
+
+.but-cont {
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.announcement-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.announcement-container.scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.payroll-form-manager {
+  text-align: center;
+}
+
+.payroll-form-container form,
+.form-payroll-employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pay-form {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pay-form table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.pay-form th,
+.pay-form td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.pay-form input {
+  width: 8rem;
+}
+
+.settings p,
+.changepassword-page form {
+  text-align: center;
+}
+
+.live-timer {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.25rem;
+}
+
+#pay-report,
+#tracker-details {
+  margin-top: 1rem;
+}
+
+.success-message {
+  color: #12733a;
+  margin-top: 10px;
+}
+
+.hint {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---------- demo login box ---------- */
+
+.demo-creds {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px dashed var(--main, #1a858c);
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.demo-creds p {
+  margin: 0.25rem 0;
+}
+
+.demo-creds code {
+  font-family: ui-monospace, Menlo, monospace;
+  background: rgba(26, 133, 140, 0.12);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.demo-creds button,
+.home-cta .login-bttn {
+  margin-top: 0.5rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #1a858c;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.demo-creds button:hover {
+  background: #136268;
+}
+
+.home-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.home-cta .login-bttn {
+  margin: 0;
+  padding: 12px 28px;
+  color: #fff;
+}
+
+/* ---------- demo bar ---------- */
+
+.demo-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.75rem;
+  padding: 0.55rem 1rem;
+  background: #10292b;
+  color: #e8f4f4;
+  font: 14px/1.4 system-ui, -apple-system, sans-serif;
+}
+
+.demo-bar * {
+  color: #e8f4f4;
+  font-family: inherit;
+}
+
+.demo-bar strong {
+  color: #7fe0e6;
+}
+
+.demo-bar-actions {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.demo-bar a {
+  color: #7fe0e6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.demo-bar button {
+  background: transparent;
+  border: 1px solid #7fe0e6;
+  border-radius: 5px;
+  padding: 2px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.demo-bar button:hover {
+  background: #1a858c;
+}
+
+body[data-layout="home"] {
+  padding-bottom: 3rem;
+}
+
+/* ---------- dark mode fixes ----------
+   The original hard-coded dark text colours, so headings and tables
+   disappeared on the dark background. */
+
+.dark body[data-layout="app"],
+.dark body[data-layout="app"] h1,
+.dark body[data-layout="app"] h2,
+.dark body[data-layout="app"] p,
+.dark body[data-layout="app"] label,
+.dark body[data-layout="app"] li,
+.dark body[data-layout="app"] td,
+.dark body[data-layout="app"] th,
+.dark body[data-layout="app"] .title {
+  color: var(--text1);
+}
+
+.dark .timesheet-box thead,
+.dark .pay-form th {
+  background-color: #2c2a2a;
+}
+
+.dark .timesheet-box tbody tr:nth-child(even) {
+  background-color: #262424;
+}
+
+.dark .timesheet-box tbody tr:hover {
+  background-color: #333;
+}
+
+.dark .dashboard-container {
+  background-color: var(--bkg2);
+}
+
+.dark .dashboard-container h1,
+.dark .dashboard-container h2,
+.dark .dashboard-container p {
+  color: #fff;
+}
+
+.dark .hint {
+  color: #bbb;
+}
+
+.dark .success-message {
+  color: #6fdc9b;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 760px) {
+  body[data-layout="app"] {
+    margin-left: 0;
+  }
+
+  .sidenav {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .sidenav .image-container {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    padding: 4px;
+  }
+
+  .sidenav .sideBut {
+    container-type: normal;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+    border-width: 0;
+    border-radius: 8px;
+    box-shadow: none;
+    margin: 0;
+    padding: 8px 14px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .demo-bar-note {
+    display: none;
+  }
+
+  /* home page */
+  body[data-layout="home"] header {
+    position: static;
+    height: auto;
+  }
+
+  body[data-layout="home"] #nav-divider {
+    position: static;
+    flex-wrap: wrap;
+  }
+
+  body[data-layout="home"] #nav-bttn {
+    margin-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  body[data-layout="home"] .image-container {
+    width: 72px;
+    height: auto;
+    padding: 8px;
+  }
+
+  body[data-layout="home"] .image-container img {
+    width: 56px;
+  }
+
+  body[data-layout="home"] .txt-bttn,
+  body[data-layout="home"] .login-bttn,
+  body[data-layout="home"] #darkmode {
+    margin: 4px;
+    padding: 6px 12px;
+  }
+
+  body[data-layout="home"] .title {
+    font-size: 2.4rem;
+  }
+
+  body[data-layout="home"] .sub {
+    font-size: 1.3rem;
+  }
+
+  body[data-layout="home"] main {
+    padding-top: 1rem;
+  }
+
+  body[data-layout="home"] .flex-container {
+    flex-wrap: wrap;
+  }
+
+  body[data-layout="home"] .left,
+  body[data-layout="home"] .right {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  #main-image {
+    width: 100%;
+  }
+}

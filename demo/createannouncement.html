@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Create Announcement · Time Tracker Demo</title>
+  <meta name="description" content="Demo of Agile Company Time Tracker, a PHP and MySQL Software Engineering class project.">
+  <link rel="icon" href="img/BigLogoV1.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <script src="js/theme.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-page="createannouncement" data-layout="app" data-auth="manager">
+  <noscript><p class="noscript">This demo needs JavaScript turned on.</p></noscript>
+  <main>
+    <div class="new-container">
+      <h2>Create Announcement</h2>
+      <form id="announcement-form" method="post" novalidate>
+        <label for="announcement_text">Announcement Text:</label><br>
+        <textarea id="announcement_text" name="announcement_text" rows="4" cols="50" maxlength="1000"></textarea><br><br>
+        <label for="expiration_date">Expiration Date:</label><br>
+        <input type="date" id="expiration_date" name="expiration_date"><br><br>
+        <input type="submit" value="Confirm Announcement">
+      </form>
+      <section class="confirm-container" id="announcement-confirm" hidden>
+        <h2>Confirm Announcement</h2>
+        <div class="announcement">
+          <p id="confirm-text"></p>
+          <p id="confirm-date"></p>
+        </div>
+        <div class="but-cont">
+          <button type="button" id="confirm-yes">Confirm</button>
+          <button type="button" id="confirm-cancel">Cancel</button>
+        </div>
+      </section>
+      <div id="announcement-error" role="alert"></div>
+    </div>
+  </main>
+</body>
+</html>
